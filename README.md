@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Shivendra</h1>
-<h3 align="center">18 year old passionate coder and developer. I also design and click pictures and sometime make Animations/Motion Designs for my YouTube Channel.</h3>
+<h3 align="center">18 year old passionate coder and developer. I also design and click pictures and sometime make Animations/Motion Designs for my YouTube Channel. On this profile, you'll find collection of my projects and work.</h3>
 
 - 🔭 I’m currently working on [Vakya](https://www.youtube.com/@WeAreVakya)
 
