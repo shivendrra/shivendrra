@@ -1,38 +1,204 @@
-.App {
-  text-align: center;
+body {
+  margin: auto;
+  padding: auto;
+  font-family: "Courier Prime", monospace;
+  background-color: #dde5e4;
+  color: #222222;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Montagu Slab", serif;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  font-family: "Courier Prime", monospace;
+  font-weight: 300;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
+  max-width: 100%;
+  margin: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #222222;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.btn,
+.btn:hover,
+.btn:active {
+  border-radius: 1px;
+}
+
+.spanTxt {
+  font-family: "Courier Prime", monospace;
+  font-size: 38px;
+}
+
+.top h3 {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.mainHr {
+  width: 90%;
+  margin: auto;
+  background-color: black;
+  height: 1px;
+}
+
+.subtop p {
+  font-size: larger;
+}
+
+svg :hover {
+  cursor: pointer;
+}
+
+.navbar-brand {
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color: #222222;
+}
+
+.nav-link {
+  font-family: "Montagu Slab", serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #222222;
+}
+
+.navbar.scrolled-main-pg {
+  background-color: #dde5e4;
+  transition: 400ms;
+  color: #222222;
+}
+
+.navbar.scrolled-oth-pg {
+  background-color: #dde5e4;
+  transition: 400ms;
+  color: #222222;
+}
+
+.lander {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, 10%);
 }
 
-.App-link {
-  color: #61dafb;
+.mainHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0px 50px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.mainSec {
+  padding: 30px 0px 100px 0px;
+}
+
+.mainSec p {
+  width: 60%;
+  margin: auto;
+  padding: 10px 0px;
+}
+
+.workSec {
+  width: 100%;
+  padding: 5% 0%;
+  margin: 0%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: -10%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .lander {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    width: 100%;
+    padding: 0px 10px;
+    transform: translate(-50%, 10%);
+  }
+
+  .mainHead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 50px 0px;
+  }
+
+  .mainSec {
+    padding: 10px 0px;
+  }
+
+  .mainSec p {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: -10%;
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 }
