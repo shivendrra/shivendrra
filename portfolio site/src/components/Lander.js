@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from './Footer';
+import Exp from './sub-comps/experience';
 
 export default function Lander() {
   return (
@@ -24,7 +25,8 @@ export default function Lander() {
         </div>
         <hr className='mainHr' />
         <div className="workSec row mt-5 mx-0">
-          <h4 className='text-dark text-center pb-5'>My work</h4>
+          <h4 className='text-dark pb-5 px-5'>My experiences</h4>
+          <Exp/>
         </div>
         <br />
         <br />

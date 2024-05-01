@@ -2,8 +2,8 @@ body {
   margin: auto;
   padding: auto;
   font-family: "Courier Prime", monospace;
-  background-color: #dde5e4;
-  color: #222222;
+  background-color: #f2f2f2;
+  color: #303030;
 }
 
 h1,
@@ -31,8 +31,8 @@ body::-webkit-scrollbar {
 
 a,
 a:hover {
-  text-decoration: none;
-  color: #222222;
+  /* text-decoration: none;
+  color: #303030; */
   cursor: pointer;
 }
 
@@ -75,26 +75,26 @@ svg :hover {
   font-family: "Baloo 2", sans-serif;
   font-weight: 600;
   font-size: 25px;
-  color: #222222;
+  color: #303030;
 }
 
 .nav-link {
   font-family: "Montagu Slab", serif;
   font-weight: 500;
   font-size: 18px;
-  color: #222222;
+  color: #303030;
 }
 
 .navbar.scrolled-main-pg {
-  background-color: #dde5e4;
+  background-color: #f2f2f2;
   transition: 400ms;
-  color: #222222;
+  color: #303030;
 }
 
 .navbar.scrolled-oth-pg {
-  background-color: #dde5e4;
+  background-color: #f2f2f2;
   transition: 400ms;
-  color: #222222;
+  color: #303030;
 }
 
 .lander {
@@ -135,6 +135,22 @@ svg :hover {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 10%;
+}
+
+
+.exp .head {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .footer {
