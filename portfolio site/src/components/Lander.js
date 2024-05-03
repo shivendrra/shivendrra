@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Footer from './Footer';
 import Exp from './sub-comps/experience';
+import Proj from './sub-comps/projects';
 
 export default function Lander() {
   return (
@@ -26,12 +27,13 @@ export default function Lander() {
         <hr className='mainHr' />
         <div className="workSec row mt-5 mx-0">
           <h4 className='text-dark pb-5 px-5'>My experiences</h4>
-          <Exp/>
+          <Exp />
+          <hr style={{ width: '60%', margin: 'auto', padding: '1% 0%' }} />
+          <h4 className='text-dark py-5 px-5'>Coding Projects</h4>
+          <Proj />
+          <hr style={{ width: '60%', margin: 'auto', padding: '1% 0%' }} />
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
+
         <Footer />
       </div>
     </>
