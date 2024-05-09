@@ -1,28 +1,19 @@
+const fs = require('fs');
+const path = require('path');
 const express = require('express');
-const cors = require('cors');
-// const fs = require('fs');
-
 const app = express();
-const port = 3001;
 
-app.use(cors());
-app.use(express.json());
+app.get('/blogContent', (req, res) => {
+  const filePath = path.join(__dirname, 'blogs', 'after_a_fall.txt');
+  fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Error reading the file');
+    }
+    res.send(data);
+  });
+});
 
-// app.post("/form", (req, res) => {
-//   const data = JSON.stringify(req.body);
-
-//   // Write the JSON data into the file
-//   fs.writeFile('data.json', data, (err) => {
-//     if (err) {
-//       console.error(err);
-//       res.status(500).send('Error writing data to file');
-//     } else {
-//       console.log('Data saved to file');
-//       res.send('Data saved successfully');
-//     }
-//   });
-// });
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(8080, () => {
+  console.log('Server is running on port 8080');
 });

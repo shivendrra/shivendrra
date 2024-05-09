@@ -39,43 +39,18 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/showcase">showcase.</Link>
+                <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/blogs">blogs.</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/blogs">blogs.</Link>
+                <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/gallery">gallery.</Link>
+              </li>
+              <li className="nav-item">
+                <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/showcase">showcase.</Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
-      <div className="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="staticBackdropLabel">Contact</h1>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body">
-            <span>
-            <h4><span className='clrdTxt'>Chat</span> to Us</h4>
-            <p className='m-0'>Our team is there to help</p>
-            <p style={{ fontWeight: '500', opacity: '95%' }}>nationalelectricalsgkp@gmail.com</p>
-          </span>
-          <span>
-            <h4><span className='clrdTxt'>Visit</span> Us</h4>
-            <p className='m-0'>Come say hello at our office HQ</p>
-            <p style={{ fontWeight: '500', opacity: '95%' }}>AU-8, Sector 13, GIDA, Kalesar, Gorakhpur, Uttar Pradesh, India, 273209</p>
-          </span>
-          <span>
-            <h4><span className='clrdTxt'>Call</span> Us</h4>
-            <p className='m-0'>Mon-Sat 9am to 5pm</p>
-            <p style={{ fontWeight: '500', opacity: '95%' }}>+91 9452190777, +91 9452189627</p>
-          </span>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   )
 }
