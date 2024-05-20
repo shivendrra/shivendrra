@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import Exp from './sub-comps/experience';
 import Proj from './sub-comps/projects';
+import profpic from './pics/Profile-2.png';
 
 export default function Lander() {
   return (
@@ -9,6 +10,9 @@ export default function Lander() {
       <div className='lander'>
         <div className='mainHead row'>
           <div className='col-lg-12 text-center top'>
+            <div className="prof-pic">
+              <img src={profpic} alt="" className='img-thumbnail' />
+            </div>
             <h3>hello, i'm <span className='spanTxt'>Shivendra.</span></h3>
           </div>
           <div className='col-lg-12 subtop text-center'>
@@ -26,7 +30,7 @@ export default function Lander() {
         </div>
         <hr className='mainHr' />
         <div className="workSec row mt-5 mx-0">
-          <h4 className='text-dark pb-5 px-5'>My experiences</h4>
+          <h4 className='text-dark pb-5 px-5'>Experience</h4>
           <Exp />
           <hr style={{ width: '60%', margin: 'auto', padding: '1% 0%' }} />
           <h4 className='text-dark py-5 px-5'>Coding Projects</h4>

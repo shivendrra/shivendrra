@@ -4,7 +4,7 @@ export default function projects() {
   return (
     <>
       <div className='projects row g-4'>
-        <div className='col-lg-6'>
+        <div className='col-lg-12'>
           <div className='card'>
             <div className='card-body'>
               <h5 className='card-title'>Small Language Model</h5>
@@ -31,16 +31,23 @@ export default function projects() {
             </div>
           </div>
         </div>
-        <div className='col-lg-6'>
+        <div className='col-lg-12'>
           <div className='card'>
             <div className='card-body'>
               <h5 className='card-title'>Enigma-1.5b</h5>
               <h6 className='card-subtitle mb-2 text-body-secondary'><em>Feb 24 - Apr 24</em></h6>
-              <p className='card-text'>
-                These are two, a 440million & a 1.5billion parameter transformer model that is capable of generating next
-                DNA sequence based on given input sequence. Trained on data gathered from various sources like NCBI,
-                Hugging-Face, Kaggle, etc. It has its own custom sub-sequence tokenizer too
-              </p>
+              <div className="col-lg-8">
+                <p className='card-text'>
+                  These are two, a 440million & a 1.5billion parameter transformer model that is capable of generating next
+                  DNA sequence based on given input sequence. Trained on data gathered from various sources like NCBI,
+                  Hugging-Face, Kaggle, etc. It has its own custom sub-sequence tokenizer too
+                </p>
+              </div>
+              <div className="col-lg-4">
+                <div className='col-lg-12 mt-3'>
+                  <iframe src='https://github.com/shivendrra/enigma-1.5b' width='100%' height='300' frameborder='0' title='Enigma-1.5b GitHub Repository'></iframe>
+                </div>
+              </div>
               <div className='col-lg-12 d-flex'>
                 <a className='card-link d-flex align-items-baseline' href='https://github.com/shivendrra/enigma-1.5b'>github
                   <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
@@ -58,7 +65,7 @@ export default function projects() {
             </div>
           </div>
         </div>
-        <div className='col-lg-6 pb-4'>
+        <div className='col-lg-12 pb-4'>
           <div className='card'>
             <div className='card-body'>
               <h5 className='card-title'>AIVA 4x500M</h5>
@@ -84,7 +91,7 @@ export default function projects() {
             </div>
           </div>
         </div>
-        <div className='col-lg-6 pb-4'>
+        <div className='col-lg-12 pb-4'>
           <div className='card'>
             <div className='card-body'>
               <h5 className='card-title'>WebGraze</h5>

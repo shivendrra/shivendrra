@@ -52,13 +52,14 @@ a:hover {
 }
 
 .spanTxt {
-  font-family: "Courier Prime", monospace;
+  font-family: "Schibsted Grotesk", sans-serif;
   font-size: 38px;
+  font-weight: 700;
 }
 
 .top h3 {
   font-size: 28px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .mainHr {
@@ -117,10 +118,10 @@ svg :hover {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 5%;
+  top: 0%;
   left: 50%;
   width: 100%;
-  transform: translate(-50%, 7.5%);
+  transform: translate(-50%, 5%);
 }
 
 .mainHead {
@@ -129,6 +130,25 @@ svg :hover {
   align-items: center;
   justify-content: center;
   padding: 0px 0px 50px 0px;
+}
+
+.mainHead .prof-pic {
+  width: 10%;
+  margin: auto;
+  padding-bottom: 20px;
+  border-radius: 50%;
+}
+
+.mainHead .prof-pic img {
+  border-radius: 50%;
+  border: none;
+  width: 60%;
+  filter: grayscale(100%);
+}
+
+.mainHead .prof-pic img:hover {
+  filter: none;
+  cursor: pointer;
 }
 
 .mainSec {
@@ -166,12 +186,44 @@ svg :hover {
   align-items: center;
 }
 
+.pic-vakya {
+  width: 80%;
+  margin: auto;
+  border-radius: 100%;
+  border: none;
+  filter: grayscale(100%);
+}
+
+.pic-nat {
+  width: 80%;
+  margin: auto;
+  border-radius: 100%;
+  border: none;
+  filter: grayscale(100%);
+}
+
+.pic-vakya:hover, .pic-nat:hover {
+  box-shadow: 0px 4px 6px #3030302f;
+  filter: none;
+}
+
 .projects {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   padding: 0% 7% 3% 7%;
+}
+
+.projects .card{
+  border: 1px solid #F9F9F9;
+  max-width: 70%;
+  margin: auto;
+}
+
+.projects .card:hover {
+  box-shadow: 4px 4px 10px #3030302f;
+  border: 1px solid #303030;
 }
 
 .showcase {
@@ -333,6 +385,27 @@ svg :hover {
 
   .mainSec {
     padding: 10px 0px;
+  }
+
+  .pic-vakya {
+    width: 100%;
+    margin: auto;
+    border-radius: 100%;
+    border: none;
+    filter: grayscale(100%);
+  }
+  
+  .pic-nat {
+    width: 100%;
+    margin: auto;
+    border-radius: 100%;
+    border: none;
+    filter: grayscale(100%);
+  }
+  
+  .pic-vakya:hover, .pic-nat:hover {
+    box-shadow: 0px 4px 6px #3030302f;
+    filter: none;
   }
 
   .mainSec p {
