@@ -13,7 +13,7 @@ export default function Blog() {
           <div className='card'>
             <div className='card-header bg-transparent'>
               <h3 className='card-title'>
-                <a href="/blog-main" className='blog-title'>
+                <a href="/" className='blog-title'>
                   After a fall
                 </a>
                 </h3>
@@ -27,7 +27,7 @@ export default function Blog() {
               </p>
             </div>
             <div className='card-footer text-body-secondary bg-transparent'>
-              14 Aug, 2023
+              4 Jan, 2024
             </div>
           </div>
         </div>

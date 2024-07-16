@@ -36,8 +36,6 @@ body::-webkit-scrollbar {
 
 a,
 a:hover {
-  /* text-decoration: none;
-  color: #303030; */
   cursor: pointer;
 }
 
@@ -161,6 +159,10 @@ svg :hover {
   padding: 10px 0px;
 }
 
+.mainSec .links a {
+  color: #303030;
+}
+
 .workSec {
   width: 100%;
   padding: 5% 0%;
@@ -173,38 +175,31 @@ svg :hover {
 
 .exp {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 2% 7% 3% 7%;
+  padding: 0% 7% 2% 7%;
 }
 
-.exp .head {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.pic-vakya {
-  width: 80%;
-  margin: auto;
-  border-radius: 100%;
+.work-pic {
+  width: 60px;
+  margin: 0px;
+  border-radius: 10%;
   border: none;
   filter: grayscale(100%);
 }
 
-.pic-nat {
-  width: 80%;
-  margin: auto;
-  border-radius: 100%;
-  border: none;
-  filter: grayscale(100%);
-}
-
-.pic-vakya:hover, .pic-nat:hover {
+.work-pic:hover {
   box-shadow: 0px 4px 6px #3030302f;
   filter: none;
+}
+
+.work-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .projects {
@@ -215,15 +210,14 @@ svg :hover {
   padding: 0% 7% 3% 7%;
 }
 
-.projects .card{
+.projects .card {
   border: 1px solid #F9F9F9;
-  max-width: 70%;
+  max-width: 100%;
   margin: auto;
 }
 
 .projects .card:hover {
-  box-shadow: 4px 4px 10px #3030302f;
-  border: 1px solid #303030;
+  box-shadow: 2px 2px 10px #3030302f;
 }
 
 .showcase {
@@ -238,8 +232,8 @@ svg :hover {
   transform: translate(-50%, 0%);
 }
 
-.showcase > .row {
-  padding: 0px 0px 100px 0px;
+.showcase .row {
+  padding: 0px 0px 20px 0px;
 }
 
 .showcase .post .images {
@@ -260,8 +254,8 @@ svg :hover {
   transform: translate(-50%, 0%);
 }
 
-.gallery .gallery-grid .row {
-  display: -ms-flexbox;
+.gallery .gallery-grid .row,
+.poster-grid .row {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
@@ -269,14 +263,16 @@ svg :hover {
   margin: 0 15px;
 }
 
-.gallery-grid .row .column {
+.gallery-grid .row .column,
+.poster-grid .row .column {
   -ms-flex: 25%;
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
 }
 
-.gallery .gallery-grid .row .column img {
+.gallery .gallery-grid .row .column img,
+.poster-grid .row .column img {
   width: 100%;
   margin-top: 8px;
   vertical-align: middle;
@@ -322,7 +318,7 @@ svg :hover {
   left: 50%;
   margin: auto;
   width: 100%;
-  transform: translate(-50%, 50%); 
+  transform: translate(-50%, 50%);
 }
 
 .blog-page .details {
@@ -368,11 +364,11 @@ svg :hover {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -50%;
+    top: 20%;
     left: 50%;
     width: 100%;
     padding: 0px 10px;
-    transform: translate(-50%, 10%);
+    transform: translate(-50%, 0%);
   }
 
   .mainHead {
@@ -383,29 +379,24 @@ svg :hover {
     padding: 0px 0px 50px 0px;
   }
 
-  .mainSec {
-    padding: 10px 0px;
+  .work-pic {
+    width: 10px;
+    margin: 0px;
+    border-radius: 10%;
+    border: none;
+    filter: grayscale(100%);
   }
 
-  .pic-vakya {
+  .lander .prof-pic {
     width: 100%;
-    margin: auto;
-    border-radius: 100%;
-    border: none;
-    filter: grayscale(100%);
   }
-  
-  .pic-nat {
-    width: 100%;
-    margin: auto;
-    border-radius: 100%;
-    border: none;
-    filter: grayscale(100%);
+
+  .lander .prof-pic .img-thumbnail {
+    width: 100px;
   }
-  
-  .pic-vakya:hover, .pic-nat:hover {
-    box-shadow: 0px 4px 6px #3030302f;
-    filter: none;
+
+  .mainSec {
+    padding: 10px 0px;
   }
 
   .mainSec p {
@@ -414,10 +405,43 @@ svg :hover {
     padding: 10px 0px;
   }
 
-  .workSec h4 {
+  .lander .links {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
+  }
+
+  .links .text-center {
+    margin: auto;
+    padding: 10px;
+  }
+
+  .exp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0% 7% 2% 7%;
+  }
+
+  .exp .work-head .work-pic {
+    width: 20%;
+  }
+
+  .exp .work-head .work-title {
+    width: 100%;
+    max-width: 100%;
+    background-color: aqua;
+  }
+
+  .blog-page .details .date {
+    width: 100%;
+  }
+
+  .blog-page .icons {
+    width: 100%;
   }
 
   .projects {
