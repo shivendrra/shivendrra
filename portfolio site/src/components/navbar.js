@@ -38,8 +38,8 @@ export default function Navbar(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/blogs">blogs.</Link>
+              <li className="nav-item disabled">
+                <Link className={`nav-link mx-3 disabled ${scrolled ? scrolled : ''}`} to="/blogs">blogs.</Link>
               </li>
               <li className="nav-item">
                 <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/gallery">gallery.</Link>

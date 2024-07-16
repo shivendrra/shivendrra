@@ -139,9 +139,16 @@ svg :hover {
 
 .mainHead .prof-pic img {
   border-radius: 50%;
-  border: none;
-  width: 60%;
+  border: 2px solid #f2f2f2;
+  width: 100px;
+  margin: auto;
   filter: grayscale(100%);
+}
+
+.mainHead .prof-pic {
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 
 .mainHead .prof-pic img:hover {
@@ -161,6 +168,35 @@ svg :hover {
 
 .mainSec .links a {
   color: #303030;
+}
+
+.yt {
+  margin: 60px 0px 0px 0px;
+}
+
+.scrolling-wrapper {
+  max-width: 100%;
+  width: 100rem;
+  max-height: 580px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+  width: 0px;
+}
+
+.scroll-card {
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+.scroll-card iframe {
+  border-radius: 10px;
+  border: 5px solid #f2f2f2;
+  box-shadow: 0px 0px 10px #3030302f;
 }
 
 .workSec {
@@ -377,6 +413,16 @@ svg :hover {
     align-items: center;
     justify-content: center;
     padding: 0px 0px 50px 0px;
+  }
+
+  .scrolling-wrapper {
+    max-width: 100%;
+    width: 30rem;
+    max-height: 580px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .work-pic {
