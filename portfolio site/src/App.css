@@ -201,12 +201,27 @@ svg :hover {
 
 .workSec {
   width: 100%;
-  padding: 5% 0%;
+  padding: 5% 0% 1% 0%;
   margin: 0%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.resume object {
+  width: 100%;
+  height: 800px;
+  border-radius: 20px;
 }
 
 .exp {
@@ -261,11 +276,6 @@ svg :hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, 0%);
 }
 
 .showcase .row {
@@ -384,6 +394,51 @@ svg :hover {
   bottom: -5%;
   left: 50%;
   transform: translate(-50%, 50%);
+}
+
+.portfolio {
+  margin: auto;
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  padding: 0px 40px;
+  transform: translate(-50%, 0%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio .content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.portfolio .showcase-section {
+  padding: 100px 0px 120px 0px;
+}
+
+.portfolio .content .item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.portfolio .content .item iframe {
+  border-radius: 10px;
+  border: 5px solid #f2f2f2;
+  box-shadow: 0px 0px 10px #3030302f;
+  width: 355px;
+  height: 200px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -522,12 +577,19 @@ svg :hover {
     margin-top: -10px;
   }
 
-  .gallery-grid .row .column {
+  .gallery-grid .row .column,
+  .poster-grid .row .column {
     -ms-flex: 100%;
     flex: 100%;
     max-width: 100%;
   }
 
+  .resume object {
+    width: 100%;
+    height: 550px;
+    border-radius: 20px;
+  }
+  
   .footer {
     display: flex;
     flex-direction: column;

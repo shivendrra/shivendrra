@@ -127,7 +127,7 @@ export default function projects() {
               <h5 className='card-title'>AxGrad</h5>
               <h6 className='card-subtitle mb-2 text-body-secondary'><em>Jun 24 - Present</em></h6>
               <p className='card-text'>
-                lightweight tensor library that contains it's own auto-diff engine like pytorch
+                 A lightweight tensor library that contains it's own auto-diff engine like pytorch, built in c/c++ & python & can train small language models easily
               </p>
               <div className='col-lg-12 d-flex'>
                 <a className='card-link d-flex align-items-baseline' href='https://github.com/shivendrra/axgrad'>github

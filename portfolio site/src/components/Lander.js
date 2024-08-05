@@ -4,6 +4,7 @@ import Exp from './sub-comps/experience';
 import Proj from './sub-comps/projects';
 import profpic from './pics/Profile-1.jpg';
 import Youtube from './Youtube';
+import resume from './sub-comps/MainResume.pdf';
 
 export default function Lander() {
   return (
@@ -68,7 +69,13 @@ export default function Lander() {
           <h4 className='text-dark py-5 px-5'>Coding Projects</h4>
           <Proj />
         </div>
-
+        <div className="resume">
+          <h4>Resume</h4>
+          <hr className='mainHr'/>
+          <br />
+          <object data={resume} name='resume'>
+          </object>
+        </div>
         <Footer />
       </div>
     </>

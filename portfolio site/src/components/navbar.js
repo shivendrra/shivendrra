@@ -45,7 +45,7 @@ export default function Navbar(props) {
                 <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/gallery">gallery.</Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/showcase">showcase.</Link>
+                <Link className={`nav-link mx-3 ${scrolled ? scrolled : ''}`} to="/portfolio">portfolio.</Link>
               </li>
             </ul>
           </div>
