@@ -33,8 +33,8 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=shivendrra&theme=github_dark&hide=contribs,issues&show_icons=true&hide_border=true" alt="Kevin's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivendrra&theme=github_dark&layout=compact&hide_border=true" /></a> |
 | ------------- | ------------- |
 
-<div style="display: flex; justify-content: center; margin: auto; padding: 10px; align-items: center" width="100%">
-  <p><img align="center" style="padding: 0px 5px; margin: auto" width="100%" src="https://github-readme-streak-stats.herokuapp.com/?user=shivendrra&" alt="shivendrra" /></p>
-</div>
+| <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=shivendrra&" alt="shivendrra" /></p> |
+| ------------- |
+
 
 [![](https://visitcount.itsvg.in/api?id=@shivendrra&icon=0&color=6)](https://visitcount.itsvg.in)
