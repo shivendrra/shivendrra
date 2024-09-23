@@ -29,8 +29,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 # 📊 GitHub Stats:
 
-
-| <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api?username=shivendrra&theme=github_dark&hide=contribs,issues&show_icons=true&hide_border=true" alt="Kevin's github stats" /></a> | <a href="https://github.com/anuraghazra/github-readme-stats"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivendrra&theme=github_dark&layout=compact&hide_border=true" /></a> |
+| <img align="center" src="https://github-readme-stats.vercel.app/api?username=shivendrra&show_icons=true&locale=en" alt="shivendrra" /></p> | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=shivendrra&show_icons=true&locale=en&layout=compact" alt="shivendrra" /> |
 | ------------- | ------------- |
 
 | <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=shivendrra&" alt="shivendrra" /></p> |
