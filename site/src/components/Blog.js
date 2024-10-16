@@ -21,10 +21,8 @@ export default function Blog() {
         <div className='col-lg-12 blog-items' onClick={() => leadToPath("Idealism & Passion in Youth", "25 Sep 2024")}>
           <BlogSec 
             title="Idealism & Passion in Youth" 
-            description={`“God created men. Saw us working hard, flawlessly, and feared that we would become equal to if not greater than them.”<br />
-              “What are you saying?”<br />
-              “Then he created women”, I added, and turned back to her.<br />
-              “Are you drunk or what?”, asked my sister.<br />`}
+            description={`In current situation of the world where every passing day something new & strange is happening, be it some discovery in science or some new technology coming to life or some country invading other; we need to have something that gives us an escape from this turmoil.
+              <br/>Every single person when born as a kid possess two of very basic qualities- innocence or naivety & curiosity.`}
             date="25 Sep 2024" 
           />
         </div>
