@@ -1,7 +1,6 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
@@ -43,15 +42,8 @@ app.get('/api/test', (req, res) => {
   res.json({ message: 'API is working!' });
 });
 
-app.use(
-  '/',
-  createProxyMiddleware({
-    target: 'http://localhost:3000',
-    changeOrigin: true,
-  })
-);
-
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
