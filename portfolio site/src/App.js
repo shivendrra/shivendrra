@@ -11,14 +11,14 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar/>
+        <Navbar />
         <div>
           <Routes>
-            <Route exact path='/' Component={() => (< Lander/>)}/>
-            <Route exact path='/blogs' Component={() => (< Blogs/>)}/>
-            <Route exact path='/gallery' Component={() => (< Gallery/>)}/>
-            <Route exact path='/portfolio' Component={() => (<Portfolio/>)}/>
-            <Route exact path='/blog-main' Component={() => (< BlogPage/>)}/>
+            <Route exact path='/' element={<Lander />} />
+            <Route exact path='/blogs' element={<Blogs />} />
+            <Route exact path='/gallery' element={<Gallery />} />
+            <Route exact path='/portfolio' element={<Portfolio />} />
+            <Route exact path='/blogs/:name' element={<BlogPage />} />
           </Routes>
         </div>
       </Router>

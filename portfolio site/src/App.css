@@ -335,7 +335,11 @@ svg :hover {
   left: 50%;
   margin: auto;
   width: 100%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 10%);
+}
+
+.blog-items {
+  padding: 20px 0px;
 }
 
 .blog .blog-items .card {
@@ -347,6 +351,7 @@ svg :hover {
 .blog-title {
   text-decoration: none;
   color: #303030;
+  cursor: pointer;
 }
 
 .blog-title:hover {
@@ -360,11 +365,11 @@ svg :hover {
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   margin: auto;
   width: 100%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 0%);
 }
 
 .blog-page .details {
@@ -380,6 +385,16 @@ svg :hover {
   flex-direction: column;
   flex-wrap: nowrap;
 }
+
+.blog-page .container .content pre {
+  line-height: normal;
+  font-size: 16px;
+  line-break: auto;
+  max-width: 100%;
+  white-space: pre-wrap; /* Allow content to wrap */
+  overflow-wrap: break-word; /* Ensure long words break */
+}
+
 
 .footer {
   background-color: #f2f2f2;

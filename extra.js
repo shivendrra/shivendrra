@@ -1,44 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import Footer from './Footer';
+import React from 'react';
 
-export default function BlogPage() {
-  const { name } = useParams();
-  const location = useLocation();
-  const [blogContent, setBlogContent] = useState('');
-  const [blogDate, setBlogDate] = useState('');
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchBlog = async () => {
-      try {
-        const res = await fetch(`http://localhost:5000/api/blogs/${name}`);
-        if (!res.ok) {
-          throw new Error('Blog not found.');
-        }
-        const data = await res.json();
-        setBlogContent(data.content);
-        setBlogDate(data.date);
-        console.log(data.date);
-      } catch (err) {
-        console.error('Error fetching blog:', err);
-        setBlogContent('Blog not found.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlog();
-  }, [name]);
-
-  useEffect(() => {
-    if (location.state && location.state.date) {
-      setBlogDate(location.state.date);
-    }
-  }, [location.state]);
-
-  if (loading) return <p>Loading...</p>;
-
+export default function Blogpage(props) {
   return (
     <>
       <div className="blog-page row">
@@ -48,7 +10,7 @@ export default function BlogPage() {
             <hr style={{ width: '100%', margin: 'auto' }} />
             <div className="col-lg-12 details">
               <div className="col-lg-6 col-sm-6 date">
-                <p className='text-start my-3'>date: {blogDate}</p>
+                <p className='my-3 mx-1'>{props.date}</p>
               </div>
               <div className="col-lg-6 col-sm-6 text-end icons">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-star ms-4" viewBox="0 0 16 16">
@@ -62,20 +24,14 @@ export default function BlogPage() {
                   <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3" />
                 </svg>
               </div>
+              <div className="content">
+                <pre>{blogContent}</pre>
+              </div>
             </div>
             <hr style={{ width: '100%', margin: 'auto' }} />
-            <br />
-            <br />
-            <div className="container content mx-auto">
-              <pre>{blogContent}</pre>
-            </div>
           </div>
         </div>
-        <br />
-        <hr style={{ width: '30%', margin: 'auto' }} />
-        <br /><br />
-        <Footer />
       </div>
     </>
-  );
+  )
 }

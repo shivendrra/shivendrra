@@ -1,19 +1,46 @@
+const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const express = require('express');
-const app = express();
+const cors = require('cors');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
-app.get('/blogContent', (req, res) => {
-  const filePath = path.join(__dirname, 'blogs', 'after_a_fall.txt');
-  fs.readFile(filePath, 'utf-8', (err, data) => {
+const app = express();
+app.use(cors({
+  origin: 'http://localhost:3000',
+}));
+
+const BLOGS_PATH = path.join(__dirname, 'blogs');
+
+app.get('/api/blogs/:name', (req, res) => {
+  const blogName = req.params.name;
+  const filePath = path.join(BLOGS_PATH, `${blogName}.txt`);
+
+  fs.access(filePath, fs.constants.F_OK, (err) => {
     if (err) {
-      console.error(err);
-      return res.status(500).send('Error reading the file');
+      console.error('Blog not found:', filePath);
+      return res.status(404).json({ error: 'Blog not found!' });
     }
-    res.send(data);
+
+    fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+        console.error('Error reading blog:', err);
+        return res.status(500).json({ error: 'Error reading the blog!' });
+      }
+      res.json({ content: data });
+    });
   });
 });
 
-app.listen(8080, () => {
-  console.log('Server is running on port 8080');
+// Proxy React routes to the development server
+app.use(
+  '/',
+  createProxyMiddleware({
+    target: 'http://localhost:3000',
+    changeOrigin: true,
+  })
+);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
