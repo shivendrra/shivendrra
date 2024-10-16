@@ -7,8 +7,9 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://shivendrra-portfolio-backend.vercel.app',
+  'https://shivendrra.vercel.app',
 ];
+
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
@@ -23,7 +24,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/shivendrra/shivendrra/main/portfolio%20site/backend/blogs';
+const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/shivendrra/shivendrra/main/site/backend/blogs';
 
 app.get('/api/blogs/:name', async (req, res) => {
   const blogName = req.params.name;
