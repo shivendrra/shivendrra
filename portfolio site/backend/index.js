@@ -1,37 +1,47 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
+const axios = require('axios'); // Use axios to fetch data from the GitHub URL
 const cors = require('cors');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
-app.use(cors({
-  origin: 'http://localhost:3000',
-}));
 
-const BLOGS_PATH = path.join(__dirname, 'blogs');
-
-app.get('/api/blogs/:name', (req, res) => {
-  const blogName = req.params.name;
-  const filePath = path.join(BLOGS_PATH, `${blogName}.txt`);
-
-  fs.access(filePath, fs.constants.F_OK, (err) => {
-    if (err) {
-      console.error('Blog not found:', filePath);
-      return res.status(404).json({ error: 'Blog not found!' });
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://shivendrra-portfolio-backend.vercel.app',
+];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
     }
+  },
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions));
 
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) {
-        console.error('Error reading blog:', err);
-        return res.status(500).json({ error: 'Error reading the blog!' });
-      }
-      res.json({ content: data });
-    });
-  });
+const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/shivendrra/shivendrra/main/portfolio%20site/backend/blogs';
+
+app.get('/api/blogs/:name', async (req, res) => {
+  const blogName = req.params.name;
+  const fileUrl = `${GITHUB_BASE_URL}/${blogName}.txt`;
+
+  try {
+    const response = await axios.get(fileUrl);
+    res.json({ content: response.data });
+  } catch (err) {
+    console.error('Error fetching blog:', err);
+    return res.status(404).json({ error: 'Blog not found!' });
+  }
 });
 
-// Proxy React routes to the development server
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API is working!' });
+});
+
 app.use(
   '/',
   createProxyMiddleware({

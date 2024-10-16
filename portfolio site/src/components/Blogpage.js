@@ -12,7 +12,8 @@ export default function BlogPage() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/blogs/${name}`);
+        const res = await fetch(`https://shivendrra-portfolio-backend.vercel.app/api/blogs/${name}`);
+        // const res = await fetch(`http://localhost:5000/api/blogs/${name}`);
         if (!res.ok) {
           throw new Error('Blog not found.');
         }
