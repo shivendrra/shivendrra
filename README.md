@@ -8,7 +8,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 3- [Axon](https://github.com/shivendrra/axon) [completed, updating]: Numpy from scratch in python without any external library. Also with a tiny scalar level autograd ``axon.micro``
 
-4- [Axgrad](https://github.com/shivendrra/axgrad) [in progress]: Lightweight ``Tensor`` manipulation library like (PyTorch)[https://pytorch.org/] written in c/c++, cuda & python.
+4- [Axgrad](https://github.com/shivendrra/axgrad) [in progress]: Lightweight ``Tensor`` manipulation library like [PyTorch](https://pytorch.org/) written in c/c++, cuda & python.
 
 5- [Axon.drop](https://github.com/shivendrra/axon-drop) [in progress]: A small & lightweight, experimental ``Tensor`` manipulation library wrapped on top of Scalar level autograd, written in c/c++, cuda & python.
 
