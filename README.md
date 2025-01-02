@@ -1,3 +1,5 @@
+"what i can't create, i don't understand" - Richard Feynman
+
 # About me
 Hello, I'm Shivendra. I like to code and make videos. Check out some of my previous work at [Vakya](https://www.youtube.com/@WeAreVakya)
 
