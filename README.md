@@ -18,11 +18,13 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 8- [Micrograd.c](https://github.com/shivendrra/micrograd.c) [completed, no updates]: Micrograd by Karpathy written in C & C++.
 
-9- [AVA](https://github.com/shivendrra/AIVA-4x500m) [in progress, backlogged]: A multimodal ai system inspired by AVA from Ex-Machina, but currently more like OpenAi's 4o, (I started working on it prior to the model launch).
+9- [Tqdm.c](https://gihub.com/shivendrra/tqdm.c) [completed, no updates]: Tqdm library of python for c/c++ code usage.
 
-10- [Shred](https://github.com/shivendrra/shredword) [in progress]: BPE tokenizer library using C based code at the backend for fast execution speeds with Python interface for usage.
+10- [AVA](https://github.com/shivendrra/AIVA-4x500m) [in progress, backlogged]: A multimodal ai system inspired by AVA from Ex-Machina, but currently more like OpenAi's 4o, (I started working on it prior to the model launch).
 
-11- [Enigma2](https://github.com/shivendrra/enigma2) [in progress, backlogged]: Second version of Enigma to predict & classify DNA & proteins more accurately using Transformers.
+11- [Shred](https://github.com/shivendrra/shredword) [in progress]: BPE tokenizer library using C based code at the backend for fast execution speeds with Python interface for usage.
+
+12- [Enigma2](https://github.com/shivendrra/enigma2) [in progress, backlogged]: Second version of Enigma to predict & classify DNA & proteins more accurately using Transformers.
 
 ## Socials
 [Instagram](https://www.instagram.com/shivendrra_/) | [Twitter](https://twitter.com/shivendrra_) | [LinkedIn](https://www.linkedin.com/in/shivendrra/) | [Youtube](https://youtube.com/@shivendrra_)
