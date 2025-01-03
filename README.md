@@ -20,7 +20,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 8- [Micrograd.c](https://github.com/shivendrra/micrograd.c) [completed, no updates]: Micrograd by Karpathy written in C & C++.
 
-9- [Tqdm.c](https://gihub.com/shivendrra/tqdm.c) [completed, no updates]: Tqdm library of python for c/c++ code usage.
+9- [Tqdm.c](https://github.com/shivendrra/tqdm.c) [completed, no updates]: Tqdm library of python for c/c++ code usage.
 
 10- [AVA](https://github.com/shivendrra/AIVA-4x500m) [in progress, backlogged]: A multimodal ai system inspired by AVA from Ex-Machina, but currently more like OpenAi's 4o, (I started working on it prior to the model launch).
 
