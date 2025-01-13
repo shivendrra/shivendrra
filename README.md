@@ -6,7 +6,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 ## Main Projects:
 1- [SmallLanguageModel](https://github.com/shivendrra/SmallLanguageModel-project) [completed, closed]: Making a LLM from scratch all the way from generating raw training data to tokenizing it, creating a model & then training it.
 
-2- [Enigma](https://github.com/shivendrra/enigma-1.5b) [completed, closed]: Transformer model trained on raw DNA data to predict the next letter of the DNA.
+2- [Enigma](https://github.com/shivendrra/enigma) [completed, closed]: Transformer model trained on raw DNA data to predict the next letter of the DNA.
 
 3- [Axon](https://github.com/shivendrra/axon) [completed, updating]: Numpy from scratch in python without any external library. Also with a tiny scalar level autograd ``axon.micro``
 
