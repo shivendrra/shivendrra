@@ -6,7 +6,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 ## Main Projects:
 1- [SmallLanguageModel](https://github.com/shivendrra/SmallLanguageModel-project) [completed, closed]: Making a LLM from scratch all the way from generating raw training data to tokenizing it, creating a model & then training it.
 
-2- [Enigma-1.5b](https://github.com/shivendrra/enigma-1.5b) [completed, closed]: Transformer model trained on raw DNA data to predict the next letter of the DNA.
+2- [Enigma](https://github.com/shivendrra/enigma-1.5b) [completed, closed]: Transformer model trained on raw DNA data to predict the next letter of the DNA.
 
 3- [Axon](https://github.com/shivendrra/axon) [completed, updating]: Numpy from scratch in python without any external library. Also with a tiny scalar level autograd ``axon.micro``
 
@@ -27,6 +27,8 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 11- [Shred](https://github.com/shivendrra/shredword) [in progress]: BPE tokenizer library using C based code at the backend for fast execution speeds with Python interface for usage.
 
 12- [Enigma2](https://github.com/shivendrra/enigma2) [in progress, backlogged]: Second version of Enigma to predict & classify DNA & proteins more accurately using Transformers.
+
+13- [Biosiac](https://github.com/shivendrra_/biosiac) [in progress, private]: Tokenizer for DNA & Protein specific ML applications, for Enigma2 basically and other applicable programs if any.
 
 ## Socials
 [Instagram](https://www.instagram.com/shivendrra_/) | [Twitter](https://twitter.com/shivendrra_) | [LinkedIn](https://www.linkedin.com/in/shivendrra/) | [Youtube](https://youtube.com/@shivendrra_)
