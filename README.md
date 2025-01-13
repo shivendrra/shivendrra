@@ -28,7 +28,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 12- [Enigma2](https://github.com/shivendrra/enigma2) [in progress, backlogged]: Second version of Enigma to predict & classify DNA & proteins more accurately using Transformers.
 
-13- [Biosiac](https://github.com/shivendrra_/biosiac) [in progress, private]: Tokenizer for DNA & Protein specific ML applications, for Enigma2 basically and other applicable programs if any.
+13- [Biosaic](https://github.com/shivendrra/biosaic) [in progress, private]: Tokenizer for DNA & Protein specific ML applications, for Enigma2 basically and other applicable programs if any.
 
 ## Socials
 [Instagram](https://www.instagram.com/shivendrra_/) | [Twitter](https://twitter.com/shivendrra_) | [LinkedIn](https://www.linkedin.com/in/shivendrra/) | [Youtube](https://youtube.com/@shivendrra_)
