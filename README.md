@@ -12,7 +12,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 4- [Axgrad](https://github.com/shivendrra/axgrad) [in progress]: Lightweight ``Tensor`` manipulation library like [PyTorch](https://pytorch.org/) written in c/c++, cuda & python.
 
-5- [Axon.drop](https://github.com/shivendrra/axon-drop) [in progress]: A small & lightweight, experimental ``Tensor`` manipulation library wrapped on top of Scalar level autograd, written in c/c++, cuda & python.
+5- [Axon.drop](https://github.com/shivendrra/axon-drop) [completed, to be updated]: A small & lightweight, experimental ``Tensor`` manipulation library wrapped on top of Scalar level autograd, written in c/c++, cuda & python.
 
 6- [WebGraze](https://github.com/shivendrra/web-graze) [completed, updating]: A Python-based library for webscraping & generating/downloading data from various sources on the internet for training ml models.
 
