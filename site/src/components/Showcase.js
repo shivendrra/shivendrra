@@ -12,7 +12,7 @@ import img8 from './images/Thumbnail5.png';
 import img9 from './images/Thumbnail6-2.png';
 
 // importing posters
-import post1 from './images/post-1.png';
+// import post1 from './images/post-1.png';
 import post2 from './images/post-2.png';
 import post3 from './images/post-3.png';
 import post4 from './images/post-4.png';
@@ -24,6 +24,7 @@ import post9 from './images/post-9.png';
 import post10 from './images/post-10.png';
 import post11 from './images/post-11.png';
 import post12 from './images/post-12.png';
+import post13 from './images/post-13.png';
 
 export default function Showcase() {
   return (
@@ -38,23 +39,23 @@ export default function Showcase() {
             <div className="row">
               <div className="column">
                 <img src={post7} alt="" />
-                <img src={post12} alt="" />
-                <img src={post1} alt="" />
-              </div>
-              <div className="column">
-                <img src={post5} alt="" />
-                <img src={post9} alt="" />
+                <img src={post4} alt="" />
                 <img src={post10} alt="" />
               </div>
               <div className="column">
+                <img src={post13} alt="" />
+                <img src={post5} alt="" />
+                <img src={post9} alt="" />
+              </div>
+              <div className="column">
+                <img src={post6} alt="" />
                 <img src={post8} alt="" />
                 <img src={post11} alt="" />
-                <img src={post6} alt="" />
               </div>
               <div className="column">
                 <img src={post2} alt="" />
                 <img src={post3} alt="" />
-                <img src={post4} alt="" />
+                <img src={post12} alt="" />
               </div>
             </div>
           </div>

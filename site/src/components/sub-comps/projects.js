@@ -21,7 +21,7 @@ export default function projects() {
                     <path fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />
                   </svg>
                 </a>
-                <a className='card-link d-flex align-items-baseline' href='http://national-electricals.com/'>huggingface
+                <a className='card-link d-flex align-items-baseline' href='https://huggingface.co/shivendrra/BasicTransformerModel'>huggingface
                   <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
                     <path fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5' />
                     <path fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />
@@ -34,7 +34,7 @@ export default function projects() {
         <div className='col-lg-6'>
           <div className='card'>
             <div className='card-body'>
-              <h5 className='card-title'>Enigma-1.5b</h5>
+              <h5 className='card-title'>Enigma</h5>
               <h6 className='card-subtitle mb-2 text-body-secondary'><em>Feb 24 - Apr 24</em></h6>
               <p className='card-text'>
                 These are two, a 440million & a 1.5billion parameter transformer model that is capable of generating next
@@ -93,6 +93,12 @@ export default function projects() {
               </p>
               <div className='col-lg-12 d-flex'>
                 <a className='card-link d-flex align-items-baseline' href='https://github.com/shivendrra/web-graze'>github
+                  <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
+                    <path fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5' />
+                    <path fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />
+                  </svg>
+                </a>
+                <a className='card-link d-flex align-items-baseline' href='https://pypi.org/project/webgraze/'>pypi
                   <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
                     <path fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5' />
                     <path fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />
@@ -175,12 +181,18 @@ export default function projects() {
           <div className='card'>
             <div className='card-body'>
               <h5 className='card-title'>Drop</h5>
-              <h6 className='card-subtitle mb-2 text-body-secondary'><em>Jun 24 - Aug 24</em></h6>
+              <h6 className='card-subtitle mb-2 text-body-secondary'><em>Jun 24 - Dec 24</em></h6>
               <p className='card-text'>
                 Part of Axon project, that has mulit-dim python tensor class wrapper over scalar autograd written in c/c++
               </p>
               <div className='col-lg-12 d-flex'>
                 <a className='card-link d-flex align-items-baseline' href='https://github.com/shivendrra/axon-drop'>github
+                  <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
+                    <path fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5' />
+                    <path fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />
+                  </svg>
+                </a>
+                <a className='card-link d-flex align-items-baseline' href='https://pypi.org/project/axon-drop/'>pypi  
                   <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
                     <path fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5' />
                     <path fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />

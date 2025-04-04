@@ -1,5 +1,4 @@
 import React from 'react'
-import natele from '../pics/natele.png';
 import vakya from '../pics/vakya.png';
 
 export default function experience() {
@@ -38,39 +37,6 @@ export default function experience() {
                 Even Mohak Mangal, on of the inspirations behind this thing saw our videos and personally dm'd me appreciating our content.</li>
             </ul>
             <p>For now, I & my friend has stopped posting because we are invloved in some personal matters, but I've plans to restart it soon as possible. And this time it would be better than before, at least 10x.</p>
-          </div>
-        </div>
-        <div className="row natel-sec">
-          <div className="col-lg-12 mb-2 work-head">
-            <img src={natele} alt="" className='img-thumbnail work-pic' />
-            <h3 className='my-auto ps-4'>Summer Intern</h3>
-          </div>
-          <div className="col-lg-12 d-flex align-items-center work-body">
-            <div className="col-lg-8 work-place d-flex align-items-center mb-2">
-              <h3 className='text-start'>National Electricals</h3>
-              <span className='text-start ms-2'>
-                <a className='pe-3 d-flex align-items-baseline' href='http://national-electricals.com/'>website
-                  <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
-                    <path fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5' />
-                    <path fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />
-                  </svg>
-                </a>
-              </span>
-            </div>
-            <div className="col-lg-4 work-date text-end">
-              <h5>/ Mar 23 - Sep 23 /</h5>
-            </div>
-          </div>
-          <div className='col-lg-12 description'>
-            <p>It's my Nana's Company, which I decided to join for the summers during my gap year to learn intricacies of business and manufacturing. Mostly assisted my Nana & Mama with the software & accounting
-              & in return they taught me about various machines like transfomers, stabilizers & some small circuit components like arduino & control boards.
-            </p>
-            <ul>
-              <li>Worked on ERP software for accounting and management related tasks. Beside working on it, I learnt about various business softwares and even tried to
-                build one myself, designed the ui in Figma and started coding it using ReactJS & NodeJS, but couldn't continue it for very long as I skipped to ML.</li>
-              <li>I was learning ui/ux designing in the free time, so I decided to design the website for them and build it using React & NodeJS.
-                Also designed the brochures/catalogues & business cards for an upcoming showcase event.</li>
-            </ul>
           </div>
         </div>
       </div>
