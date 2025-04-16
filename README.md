@@ -12,7 +12,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 4- [Axgrad](https://github.com/shivendrra/axgrad) [in progress]: Lightweight ``Tensor`` manipulation library like [PyTorch](https://pytorch.org/) written in c/c++, cuda & python.
 
-5- [Axon.drop](https://github.com/shivendrra/axon-drop) [completed, to be updated]: A small & lightweight, experimental ``Tensor`` manipulation library wrapped on top of Scalar level autograd, written in c/c++, cuda & python.
+5- [Axon.drop](https://github.com/shivendrra/axon-drop) [completed, closed]: A small & lightweight, experimental ``Tensor`` manipulation library wrapped on top of Scalar level autograd, written in c/c++, cuda & python.
 
 6- [WebGraze](https://github.com/shivendrra/web-graze) [completed, updating]: A Python-based library for webscraping & generating/downloading data from various sources on the internet for training ml models.
 
@@ -28,7 +28,7 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 12- [Enigma2](https://github.com/shivendrra/enigma2) [in progress, backlogged]: Second version of Enigma to predict & classify DNA & proteins more accurately using Transformers.
 
-13- [Biosaic](https://github.com/shivendrra/biosaic) [in progress, private]: Tokenizer for DNA & Protein specific ML applications, for Enigma2 basically and other applicable programs if any.
+13- [Biosaic](https://github.com/shivendrra/biosaic) [completed, updating]: Tokenizer for DNA & Protein specific ML applications, for Enigma2 basically and other applicable programs if any.
 
 ## Socials
 [Instagram](https://www.instagram.com/shivendrra_/) | [Twitter](https://twitter.com/shivendrra_) | [LinkedIn](https://www.linkedin.com/in/shivendrra/) | [Youtube](https://youtube.com/@shivendrra_)
