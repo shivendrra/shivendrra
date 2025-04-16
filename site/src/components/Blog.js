@@ -54,19 +54,19 @@ export default function Blog() {
               “Is it 12?”, he murmurs to himself, and then looks at the clock, “no, it’s just 11:45”, then again gets back to the animation.`}
             date="14 Aug 2023"
           />
-          <div className='col-lg-12 blog-items' onClick={() => leadToPath("Engineer", "21 July 2023")}>
-            <BlogSec
-              title="Engineer"
-              description={`“Do you want to go to MIT?”</br>
+        </div>
+        <div className='col-lg-12 blog-items' onClick={() => leadToPath("Engineer", "21 July 2023")}>
+          <BlogSec
+            title="Engineer"
+            description={`“Do you want to go to MIT?”</br>
 
 “Yes, very much” he becomes cheerful soon as he says this, “why’d you ask that?”, he adds.</br>
 
 “No, I thought you were more into arts than engineering and science stuff.”</br>
 
 He smiles and says, “you know, I’ve read approx. 30 books, and 20 of them are related to physics and mathematics and three of them are entirely about biology and chemistry”.`}
-              date="4 Jan 2024"
-            />
-          </div>
+            date="4 Jan 2023"
+          />
         </div>
         <br /><br /><br />
         <br /><br /><br />
