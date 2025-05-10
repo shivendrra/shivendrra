@@ -15,7 +15,7 @@ export default function BlogSec(props) {
             dangerouslySetInnerHTML={{ __html: props.description }}
           />
         </div>
-        <div className='card-footer text-body-secondary bg-transparent'>
+        <div className='card-footer blog-date bg-transparent'>
           {props.date}
         </div>
       </div>

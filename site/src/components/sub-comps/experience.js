@@ -8,22 +8,22 @@ export default function experience() {
         <div className="row vakya-sec">
           <div className="col-lg-12 col-sm-12 mb-2 work-head">
             <img src={vakya} alt="" className='img-thumbnail work-pic' />
-            <h3 className='my-auto ps-4'>Creative Head</h3>
+            <h3 className='my-auto ps-4 d-flex align-items-center'>Vakya</h3>
+            <span className='text-start ms-2 my-auto'>
+              <a className='pe-3 d-flex align-items-center' href='http://youtube.com/@vakyastudio/'>youtube
+                <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
+                  <path fillRule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5' />
+                  <path fillRule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />
+                </svg>
+              </a>
+            </span>
           </div>
           <div className="col-lg-12 col-sm-12 d-flex align-items-center mb-2 work-body">
             <div className="col-lg-8 col-sm-8 work-place d-flex align-items-center">
-              <h3>Vakya</h3>
-              <span className='text-start ms-2'>
-                <a className='pe-3 d-flex align-items-baseline' href='http://youtube.com/@vakyastudio/'>youtube
-                  <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' className='bi bi-box-arrow-up-right ms-1' viewBox='0 0 16 16'>
-                    <path fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5' />
-                    <path fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z' />
-                  </svg>
-                </a>
-              </span>
+              <h3>Creative Head</h3>
             </div>
             <div className="col-lg-4 col-sm-4 work-date text-end">
-              <h5>/ Sep 22 - Jan 24 /</h5>
+              <h5 className='faded-text'>/ Sep 22 - Jan 24 /</h5>
             </div>
           </div>
           <div className='col-lg-12 description'>

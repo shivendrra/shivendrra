@@ -21,9 +21,9 @@ export default function Blog() {
         <div className='col-lg-12 blog-items' onClick={() => leadToPath("Pursuit of Order fuels Entropy", "2 Dec 2024")}>
           <BlogSec
             title="Pursuit of Order fuels Entropy"
-            description={`“This sucks, I can’t work on this software. There has to be some alternative to this!”</br>
-“There isn’t any.”</br>
-“What?? Looks like I’ve to write a new one all by myself,” I said in frustration. “It will have all the components, be super easy to use, and have a great UI.”</br>
+            description={`“This sucks, I can't work on this software. There has to be some alternative to this!”</br>
+“There isn't any.”</br>
+“What?? Looks like I've to write a new one all by myself,” I said in frustration. “It will have all the components, be super easy to use, and have a great UI.”</br>
 “No shit, Sherlock,” my friend scoffed.</br>`}
             date="4 Jan 2024"
           />
@@ -42,16 +42,16 @@ export default function Blog() {
             description={`“Why is there so much of crowd? Why are so many police men out there?”</br>
       “Hey!! Put the barricades! Quick!”, a voice from the crowd says, along with other voices.</br>
       
-      “What’s going on there? I heard a loud noise a few minutes before but what now? What was that sound of?”</br>`}
+      “What's going on there? I heard a loud noise a few minutes before but what now? What was that sound of?”</br>`}
             date="26 Nov 2023"
           />
         </div>
         <div className='col-lg-12 blog-items' onClick={() => leadToPath("Eighteen", "14 Aug 2023")}>
           <BlogSec
             title="Eighteen"
-            description={`His legs were shaking while his feet tapped against the floor, continuously, and his eyes gazed upon the laptop’s screen. He was animating for the video.<br/>
+            description={`His legs were shaking while his feet tapped against the floor, continuously, and his eyes gazed upon the laptop's screen. He was animating for the video.<br/>
               Time to time, he was un-focusing from the screen to take a glimpse at the clock.<br/>
-              “Is it 12?”, he murmurs to himself, and then looks at the clock, “no, it’s just 11:45”, then again gets back to the animation.`}
+              “Is it 12?”, he murmurs to himself, and then looks at the clock, “no, it's just 11:45”, then again gets back to the animation.`}
             date="14 Aug 2023"
           />
         </div>
@@ -60,11 +60,11 @@ export default function Blog() {
             title="Engineer"
             description={`“Do you want to go to MIT?”</br>
 
-“Yes, very much” he becomes cheerful soon as he says this, “why’d you ask that?”, he adds.</br>
+“Yes, very much” he becomes cheerful soon as he says this, “why'd you ask that?”, he adds.</br>
 
 “No, I thought you were more into arts than engineering and science stuff.”</br>
 
-He smiles and says, “you know, I’ve read approx. 30 books, and 20 of them are related to physics and mathematics and three of them are entirely about biology and chemistry”.`}
+He smiles and says, “you know, I've read approx. 30 books, and 20 of them are related to physics and mathematics and three of them are entirely about biology and chemistry”.`}
             date="4 Jan 2023"
           />
         </div>
