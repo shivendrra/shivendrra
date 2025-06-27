@@ -1,24 +1,28 @@
 import React from 'react';
+import './styles/BlogSec.css';
 
 export default function BlogSec(props) {
   return (
-    <>
-      <div className='card'>
-        <div className='card-header bg-transparent'>
-          <h3 className='card-title blog-title'>
+    <div className="blog-card-wrapper">
+      <div className="blog-card">
+        <div className="blog-card-header">
+          <h3 className="blog-card-title">
             {props.title}
           </h3>
         </div>
-        <div className='card-body'>
+        <div className="blog-card-body">
           <p 
-            className='card-text text-start'
+            className="blog-card-description"
             dangerouslySetInnerHTML={{ __html: props.description }}
           />
         </div>
-        <div className='card-footer blog-date bg-transparent'>
-          {props.date}
+        <div className="blog-card-footer">
+          <span className="blog-card-date">
+            <i className="fas fa-calendar-alt"></i>
+            {props.date}
+          </span>
         </div>
       </div>
-    </>
+    </div>
   );
 }

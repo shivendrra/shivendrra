@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import Footer from './Footer';
 import Showcase from './Showcase';
+import './styles/Portfolio.css';
 
 export default function Portfolio() {
   return (

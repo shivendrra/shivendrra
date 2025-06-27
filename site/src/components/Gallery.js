@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
+import './styles/Portfolio.css';
 
 // importing images
 import img1 from './pics/1.jpg';
@@ -93,8 +94,8 @@ export default function Gallery() {
             </div>
           </div>
         </div>
-        <br /><br /><br /><br />
-        <br /><br /><br /><br />
+        {/* <br /><br /><br /><br />
+        <br /><br /><br /><br /> */}
         <Footer />
       </div>
     </>

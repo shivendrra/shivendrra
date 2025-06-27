@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import Footer from './Footer';
+import './styles/BlogPage.css';
 
 export default function BlogPage() {
   const { name } = useParams();
@@ -33,33 +34,53 @@ export default function BlogPage() {
 
   useEffect(() => {
     if (location.state && location.state.date) {
+      console.log(location.state.date);
       setBlogDate(location.state.date);
     }
   }, [location.state]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
+        <p className="loading-text">Loading...</p>
+      </div>
+    );
+  }
 
   return (
-    <>
-      <div className="blog-page row">
-        <div className="col-lg-12">
-          <h2 className='text-center'>{name.replace(/-/g, ' ')}</h2>
-          <div className="container pt-3">
-            <div className="col-lg-12 details">
-              <p className='text-start my-3'><em><strong>date: {blogDate}</strong></em></p>
-            </div>
-            <br />
-            <br />
-            <div className="container content mx-auto">
-              <pre>{blogContent}</pre>
+    <div className="blog-page-wrapper">
+      <div className="container-fluid">
+        <div className="row justify-content-center m-auto">
+          <div className="col-12 col-lg-10 col-xl-8">
+            {/* Blog Header */}
+            <header className="blog-header">
+              <h1 className="blog-title">{name.replace(/-/g, ' ')}</h1>
+              <div className="blog-meta">
+                <span className="blog-date text-center">
+                  /
+                  {blogDate}
+                  /
+                </span>
+              </div>
+            </header>
+
+            {/* Blog Content */}
+            <main className="blog-content-wrapper">
+              <div className="blog-content">
+                <pre className="blog-text">{blogContent}</pre>
+              </div>
+            </main>
+
+            {/* Blog Footer Divider */}
+            <div className="blog-divider">
+              <hr className="divider-line" />
             </div>
           </div>
         </div>
-        <br />
-        <hr style={{ width: '30%', margin: 'auto' }} />
-        <br /><br />
-        <Footer />
       </div>
-    </>
+      
+      <Footer />
+    </div>
   );
 }

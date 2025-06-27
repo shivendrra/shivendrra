@@ -25,6 +25,7 @@ import post10 from './images/post-10.png';
 import post11 from './images/post-11.png';
 import post12 from './images/post-12.png';
 import post13 from './images/post-13.png';
+import './styles/Portfolio.css';
 
 export default function Showcase() {
   return (
