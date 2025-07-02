@@ -8,27 +8,27 @@ Hello, I'm Shivendra. I like to code and make videos. Check out some of my previ
 
 2- [Enigma](https://github.com/shivendrra/enigma) [completed, closed]: Transformer model trained on raw DNA data to predict the next letter of the DNA.
 
-3- [Axon](https://github.com/shivendrra/axon) [completed, updating]: Numpy from scratch in python without any external library. Also with a tiny scalar level autograd ``axon.micro``
+3- [Axon](https://github.com/delveopers/axon) [completed, updating]: Lightweight multi-dimensional array manipulation library powered by GPU.
 
-4- [Axgrad](https://github.com/shivendrra/axgrad) [in progress]: Lightweight ``Tensor`` manipulation library like [PyTorch](https://pytorch.org/) written in c/c++, cuda & python.
+4- [Axgrad](https://github.com/shivendrra/axgrad) [completed, updating]: Lightweight ``Tensor`` manipulation library like [PyTorch](https://pytorch.org/) written in c/c++, cuda & python.
 
 5- [Axon.drop](https://github.com/shivendrra/axon-drop) [completed, closed]: A small & lightweight, experimental ``Tensor`` manipulation library wrapped on top of Scalar level autograd, written in c/c++, cuda & python.
 
-6- [WebGraze](https://github.com/shivendrra/web-graze) [completed, updating]: A Python-based library for webscraping & generating/downloading data from various sources on the internet for training ml models.
+6- [WebGraze](https://github.com/shivendrra/web-graze) [completed, closed]: A Python-based library for scraping data from various sources on the internet. For ML usecases.
 
-7- [Synapse](https://github.com/shivendrra/synapse) [completed, to be updated]: A free platform for streaming music & audio/podcasts, based on Youtube V3 API.
+7- [Synapse](https://github.com/shivendrra/synapse) [completed, closed]: A free platform for streaming music & audio/podcasts, based on Youtube V3 API.
 
-8- [Micrograd.c](https://github.com/shivendrra/micrograd.c) [completed, no updates]: Micrograd by Karpathy written in C & C++.
+8- [Micrograd.c](https://github.com/shivendrra/micrograd.c) [completed, closed]: Micrograd by Karpathy written in C & C++.
 
-9- [Tqdm.c](https://github.com/shivendrra/tqdm.c) [completed, no updates]: Tqdm library of python for c/c++ code usage.
+9- [Tqdm.c](https://github.com/shivendrra/tqdm.c) [completed, closed]: Tqdm library of python for c/c++ code usage.
 
 10- [AVA](https://github.com/shivendrra/AIVA-4x500m) [in progress, backlogged]: A multimodal ai system inspired by AVA from Ex-Machina, but currently more like OpenAi's 4o, (I started working on it prior to the model launch).
 
-11- [Shred](https://github.com/shivendrra/shredword) [in progress]: BPE tokenizer library using C based code at the backend for fast execution speeds with Python interface for usage.
+11- [Shred](https://github.com/delveopers/shredword) [completed, updating]: Fast & efficient BPE tokenizer written in C & python for LLM tranining.
 
-12- [Enigma2](https://github.com/shivendrra/enigma2) [in progress, backlogged]: Second version of Enigma to predict & classify DNA & proteins more accurately using Transformers.
+12- [Enigma2](https://github.com/shivendrra/enigma2) [in progres, backlogged]: Second version of Enigma to predict & classify DNA & proteins more accurately using Transformers.
 
-13- [Biosaic](https://github.com/shivendrra/biosaic) [completed, updating]: Tokenizer for DNA & Protein specific ML applications, for Enigma2 basically and other applicable programs if any.
+13- [Biosaic](https://github.com/delveopers/biosaic) [completed, updating]: Tokenizer for DNA & Protein specific ML applications, for Enigma2 specifically and other applicable programs if any.
 
 ## Socials
 [Instagram](https://www.instagram.com/shivendrra_/) | [Twitter](https://twitter.com/shivendrra_) | [LinkedIn](https://www.linkedin.com/in/shivendrra/) | [Youtube](https://youtube.com/@shivendrra_)
