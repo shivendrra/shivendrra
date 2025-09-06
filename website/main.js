@@ -1,6 +1,6 @@
 // Configuration
 const GITHUB_USERNAME = 'shivendrra';
-const YOUTUBE_CHANNEL_ID = 'UC-9f8UGdV4-U8PGa-9rWWqQ'; // Replace with actual channel ID
+const YOUTUBE_CHANNEL_ID = 'UC-9f8UGdV4-U8PGa-9rWWqQ';
 
 const PROJECT_URLS = [
   'https://github.com/delveopers/Shredword',
@@ -10,6 +10,55 @@ const PROJECT_URLS = [
   'https://github.com/shivendrra/matmul-optimization',
   'https://github.com/delveopers/Biosaic'
 ];
+
+// Fallback with static project data
+const fallbackProjects = [
+  {
+    name: "Shredword",
+    description: "Fast & efficient BPE tokenizer written in C & python for LLM tranining",
+    html_url: "https://github.com/delveopers/Shredword",
+    homepage: "https://pypi.org/project/shredword",
+    language: "C++,",
+    languages: [{ name: "C++", percentage: 54.3 }, { name: "Python", percentage: 31.1 }, { name: "C", percentage: 12.1 }],
+    topics: null,
+    stars: 0,
+    forks: 0
+  },
+  {
+    name: "Synapse",
+    description: "a music app that lets you stream music or any video available on youtube for free without ads",
+    html_url: "https://github.com/shivendrra/synapse",
+    homepage: "https://synapse-music.vercel.app/",
+    language: "Javascript",
+    languages: [{ name: "Javascript", percentage: 70.5 }, { name: "CSS", percentage: 27.4 }, { name: "HTML", percentage: 2.1 }],
+    topics: null,
+    stars: 0,
+    forks: 0
+  },
+  {
+    name: "AxGrad",
+    description: "lightweight tensor library that contains it's own auto-diff engine like pytorch",
+    html_url: "https://github.com/shivendrra/ax-grad",
+    homepage: "https://pypi.org/project/axgrad/",
+    language: "C++",
+    languages: [{ name: "C++", percentage: 54.1 }, { name: "Python", percentage: 25.8 }, { name: "Cuda", percentage: 13.4 }, { name: "C", percentage: 6.4 }],
+    topics: null,
+    stars: 0,
+    forks: 0
+  },
+  {
+    name: "Axon",
+    description: "lightweight multi-dimensional array manipulation library powered by GPU",
+    html_url: "https://github.com/delveopers/Axon",
+    homepage: "https://pypi.org/project/axon-pypi/",
+    language: "Python",
+    languages: [{ name: "C++", percentage: 51.1 }, { name: "Python", percentage: 23.7 }, { name: "Cuda", percentage: 17 }, { name: "C", percentage: 8 }],
+    topics: null,
+    stars: 0,
+    forks: 0
+  }
+];
+
 
 const sampleVideos = [
   {
@@ -72,7 +121,6 @@ function initScrollAnimations() {
   });
 }
 
-// Extract repository info from GitHub URL
 function extractRepoInfo(url) {
   const match = url.match(/github\.com\/([^/]+)\/([^/]+)/);
   if (match) {
@@ -84,94 +132,13 @@ function extractRepoInfo(url) {
   return null;
 }
 
-// Fetch repository data from GitHub API
-async function fetchRepoData(owner, repo) {
-  try {
-    // Fetch basic repository info
-    const repoResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
-    if (!repoResponse.ok) {
-      throw new Error(`Failed to fetch repo: ${repoResponse.status}`);
-    }
-    const repoData = await repoResponse.json();
-
-    // Fetch languages data
-    const languagesResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/languages`);
-    let languagesData = {};
-    if (languagesResponse.ok) {
-      languagesData = await languagesResponse.json();
-    }
-
-    // Calculate language percentages
-    const totalBytes = Object.values(languagesData).reduce((sum, bytes) => sum + bytes, 0);
-    const languages = Object.entries(languagesData).map(([name, bytes]) => ({
-      name,
-      bytes,
-      percentage: totalBytes > 0 ? Math.round((bytes / totalBytes) * 100) : 0
-    })).sort((a, b) => b.bytes - a.bytes);
-
-    return {
-      name: repoData.name,
-      description: repoData.description || 'No description available',
-      html_url: repoData.html_url,
-      homepage: repoData.homepage,
-      language: repoData.language,
-      languages: languages,
-      topics: repoData.topics || [],
-      stars: repoData.stargazers_count || 0,
-      forks: repoData.forks_count || 0,
-      created_at: repoData.created_at,
-      updated_at: repoData.updated_at
-    };
-  } catch (error) {
-    console.error(`Error fetching data for ${owner}/${repo}:`, error);
-    return null;
-  }
-}
-
-// Load projects from GitHub API
-async function loadProjects() {
-  const projectsGrid = document.getElementById('projects-grid');
-  showLoading('projects-grid');
-
-  try {
-    const projectPromises = PROJECT_URLS.map(async (url) => {
-      const repoInfo = extractRepoInfo(url);
-      if (repoInfo) {
-        return await fetchRepoData(repoInfo.owner, repoInfo.repo);
-      }
-      return null;
-    });
-
-    const projects = await Promise.all(projectPromises);
-    const validProjects = projects.filter(project => project !== null);
-
-    if (validProjects.length > 0) {
-      displayProjects(validProjects);
-    } else {
-      projectsGrid.innerHTML = `
-        <div class="col-12 text-center">
-          <p class="text-muted">Unable to load projects from GitHub API.</p>
-        </div>
-      `;
-    }
-  } catch (error) {
-    console.error('Error loading projects:', error);
-    projectsGrid.innerHTML = `
-      <div class="col-12 text-center">
-        <p class="text-muted">Error loading projects. Please try again later.</p>
-      </div>
-    `;
-  }
-}
-
-// Display projects in grid
 function displayProjects(projects) {
   const projectsGrid = document.getElementById('projects-grid');
   const limitedProjects = projects.slice(0, 8);
 
   projectsGrid.innerHTML = limitedProjects.map(project => {
     const languageDisplay = project.languages && project.languages.length > 0
-      ? project.languages.slice(0, 3).map(lang => `${lang.name}`).join(', ')
+      ? project.languages.slice(0, 4).map(lang => `${lang.name}`).join(', ')
       : project.language || 'Various';
 
     return `
@@ -179,7 +146,7 @@ function displayProjects(projects) {
         <div class="project-card d-flex flex-column">
           <h3 class="project-title">${project.name}</h3>
           <p class="project-subtitle">
-            ${languageDisplay} • ${topicsDisplay}${stats}
+            ${languageDisplay}
           </p>
           <p class="project-description">${project.description}</p>
           <div class="project-links">
@@ -193,6 +160,34 @@ function displayProjects(projects) {
 
   const newElements = projectsGrid.querySelectorAll('.scroll-fade');
   newElements.forEach(el => observer.observe(el));
+}
+
+async function loadProjects() {
+  const projectsGrid = document.getElementById('projects-grid');
+  showLoading('projects-grid');
+
+  try {
+    const projects = [];
+    for (const url of PROJECT_URLS) {
+      const repoInfo = extractRepoInfo(url);
+      if (repoInfo) {
+        const project = await fetchRepoData(repoInfo.owner, repoInfo.repo);
+        if (project) {
+          projects.push(project);
+        }
+        await new Promise(resolve => setTimeout(resolve, 200));
+      }
+    }
+
+    if (projects.length > 0) {
+      displayProjects(projects);
+    } else {
+      displayProjects(fallbackProjects);
+    }
+  } catch (error) {
+    console.error('Error loading projects:', error);
+    displayProjects(fallbackProjects);
+  }
 }
 
 async function loadVideos() {
@@ -224,7 +219,6 @@ async function loadVideos() {
   }
 }
 
-// Display videos in grid
 function displayVideos(videos) {
   const videoGrid = document.getElementById('video-grid');
 
@@ -263,7 +257,6 @@ function initSmoothScrolling() {
   });
 }
 
-// Parallax effect for landing section
 window.addEventListener('scroll', function () {
   const scrolled = window.pageYOffset;
   const speed = 0.5;
@@ -277,24 +270,20 @@ window.addEventListener('scroll', function () {
   });
 });
 
-// Add loading states
 function showLoading(containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
 }
 
-// Error handling for images
 document.addEventListener('DOMContentLoaded', function () {
   const images = document.querySelectorAll('img');
   images.forEach(img => {
     img.addEventListener('error', function () {
-      // Create a placeholder if image fails to load
       this.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f8f9fa'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666' font-family='Instrument Serif' font-size='16'%3E${this.alt || 'Image not found'}%3C/text%3E%3C/svg%3E`;
     });
   });
 });
 
-// Social bar hide/show on scroll
 let lastScrollTop = 0;
 
 window.addEventListener('scroll', function () {
