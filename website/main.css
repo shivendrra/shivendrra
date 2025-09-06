@@ -287,8 +287,12 @@ footer {
     font-size: 2.5rem;
   }
 
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
   .footer-quote {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: 0 1rem;
   }
 
@@ -321,7 +325,8 @@ footer {
   }
 
   .video-card {
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
+    height: 180px;
   }
 }
 

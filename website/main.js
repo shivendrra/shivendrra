@@ -5,7 +5,7 @@ const YOUTUBE_CHANNEL_ID = 'UC-9f8UGdV4-U8PGa-9rWWqQ';
 const PROJECT_URLS = [
   'https://github.com/delveopers/Shredword',
   'https://github.com/shivendrra/synapse',
-  'https://github.com/shivendrra/ax-grad',
+  'https://github.com/shivendrra/axgrad',
   'https://github.com/delveopers/Axon',
   'https://github.com/shivendrra/matmul-optimization',
   'https://github.com/delveopers/Biosaic'
@@ -63,31 +63,31 @@ const fallbackProjects = [
 const sampleVideos = [
   {
     title: 'I BUILT A GPT',
-    thumbnail: 'media/Thumbnail2.png',
+    thumbnail: './media/Thumbnail2.png',
     description: 'A video by Shivendra',
     url: 'https://www.youtube.com/watch?v=PVpyN_2z5II'
   },
   {
     title: 'THE ARTIST',
-    thumbnail: 'media/Thumbnail1.png',
+    thumbnail: './media/Thumbnail1.png',
     description: 'A Shortfilm by Shivendra',
     url: 'https://www.youtube.com/watch?v=OfyEUGiRzYw'
   },
   {
     title: 'ORIGIN OF ISRO',
-    thumbnail: 'media/Thumbnail9.png',
+    thumbnail: './media/Thumbnail4.png',
     description: 'A video by Vakya',
     url: 'https://www.youtube.com/watch?v=L-hUYR9KsIk&t=33s'
   },
   {
     title: 'THIS PICTURE TELLS A STORY',
-    thumbnail: 'media/Thumbnail8.jpg',
+    thumbnail: './media/Thumbnail3.png',
     description: 'A video by Vakya',
     url: 'https://www.youtube.com/watch?v=t5M_D5hAyoc&t=81s'
   },
   {
     title: 'OPERATION GANGOTRI',
-    thumbnail: 'media/Thumbnail11.jpg',
+    thumbnail: './media/Thumbnail5.png',
     description: 'A video by Vakya',
     url: 'https://www.youtube.com/watch?v=86kPclU1X8E&t=58s'
   }
@@ -130,6 +130,52 @@ function extractRepoInfo(url) {
     };
   }
   return null;
+}
+
+// Add this BEFORE the loadProjects function:
+
+// Fetch repository data from GitHub API
+async function fetchRepoData(owner, repo) {
+  try {
+    // Fetch basic repository info
+    const repoResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+    if (!repoResponse.ok) {
+      console.warn(`Failed to fetch repo ${owner}/${repo}: ${repoResponse.status}`);
+      return null;
+    }
+    const repoData = await repoResponse.json();
+
+    // Fetch languages data
+    const languagesResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/languages`);
+    let languagesData = {};
+    if (languagesResponse.ok) {
+      languagesData = await languagesResponse.json();
+    }
+
+    const totalBytes = Object.values(languagesData).reduce((sum, bytes) => sum + bytes, 0);
+    const languages = Object.entries(languagesData).map(([name, bytes]) => ({
+      name,
+      bytes,
+      percentage: totalBytes > 0 ? Math.round((bytes / totalBytes) * 100) : 0
+    })).sort((a, b) => b.bytes - a.bytes);
+
+    return {
+      name: repoData.name,
+      description: repoData.description || 'No description available',
+      html_url: repoData.html_url,
+      homepage: repoData.homepage,
+      language: repoData.language,
+      languages: languages,
+      topics: repoData.topics || [],
+      stars: repoData.stargazers_count || 0,
+      forks: repoData.forks_count || 0,
+      created_at: repoData.created_at,
+      updated_at: repoData.updated_at
+    };
+  } catch (error) {
+    console.error(`Error fetching data for ${owner}/${repo}:`, error);
+    return null;
+  }
 }
 
 function displayProjects(projects) {
@@ -327,12 +373,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function preloadImages() {
   const criticalImages = [
-    'media/profile.jpg',
-    'media/Thumbnail1.png',
-    'media/Thumbnail2.png',
-    'media/Thumbnail11.png',
-    'media/Thumbnail9.png',
-    'media/Thumbnail8.png'
+    './media/profile.jpg',
+    './media/Thumbnail1.png',
+    './media/Thumbnail2.png',
+    './media/Thumbnail3.png',
+    './media/Thumbnail4.png',
+    './media/Thumbnail5.png'
   ];
 
   criticalImages.forEach(src => {
