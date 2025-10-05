@@ -388,3 +388,39 @@ function preloadImages() {
 }
 
 document.addEventListener('DOMContentLoaded', preloadImages);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const blogBtn = document.getElementById('blogBtn');
+  const blogModal = document.getElementById('blogModal');
+  const blogClose = document.getElementById('blogClose');
+
+  if (blogBtn && blogModal && blogClose) {
+    // Open modal
+    blogBtn.addEventListener('click', () => {
+      blogModal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // prevent scroll
+    });
+
+    // Close modal
+    blogClose.addEventListener('click', () => {
+      blogModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Close when clicking outside
+    blogModal.addEventListener('click', (e) => {
+      if (e.target === blogModal) {
+        blogModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Escape key closes modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && blogModal.classList.contains('active')) {
+        blogModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});

@@ -16,7 +16,6 @@ body {
   max-width: 1024px;
 }
 
-/* Landing Section */
 #landing {
   padding: 2rem 0;
 }
@@ -47,7 +46,6 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Titles */
 .section-title {
   font-size: 1.5rem;
   font-weight: 400;
@@ -56,7 +54,6 @@ body {
   color: #333;
 }
 
-/* About Section */
 .about-text {
   font-size: 1.6rem;
   max-width: 1000px;
@@ -66,7 +63,6 @@ body {
   line-height: 1.8;
 }
 
-/* Videos Section */
 #videos {
   background-color: #fff;
 }
@@ -111,7 +107,6 @@ body {
   opacity: 0.9;
 }
 
-/* Projects Section */
 .project-card {
   background: white;
   padding: 1rem;
@@ -178,7 +173,6 @@ body {
   color: white;
 }
 
-/* Footer */
 footer {
   background-color: #fff;
   padding: 4rem 0;
@@ -200,7 +194,6 @@ footer {
   margin: 0 auto;
 }
 
-/* Social Bar */
 .social-bar {
   position: fixed;
   bottom: 30px;
@@ -234,103 +227,138 @@ footer {
   transform: translateY(-2px);
 }
 
-/* Animations */
-.fade-up {
+.blog-btn {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.blog-btn:hover {
+  background: rgba(54, 127, 253, 0.1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.blog-btn .material-symbols-outlined {
+  font-size: 28px;
+  color: #333;
+}
+
+.blog-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blog-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.blog-content {
+  background: white;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 0;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   transform: translateY(30px);
-  animation: fadeUp 0.8s ease forwards;
+  transition: transform 0.3s ease;
 }
 
-.fade-up:nth-child(2) {
-  animation-delay: 0.2s;
+.blog-modal.active .blog-content {
+  transform: translateY(0);
 }
 
-.fade-up:nth-child(3) {
-  animation-delay: 0.4s;
+.blog-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.blog-close:hover {
+  color: #367FFD;
+  transform: rotate(90deg);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .landing-title {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
-  .landing-quote {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .profile-img {
-    width: 200px;
-    height: 200px;
-    margin-top: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .about-text {
-    font-size: 1.1rem;
-    padding: 0 1rem;
-  }
-
-  .portfolio-title {
-    font-size: 2.5rem;
-  }
-
-  .footer-title {
-    font-size: 1.2rem;
-  }
-
-  .footer-quote {
-    font-size: 1.1rem;
-    padding: 0 1rem;
-  }
-
-  .social-bar {
-    bottom: 20px;
-    padding: 12px 20px;
-    gap: 5px;
-  }
-
-  .social-link svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .project-card {
-    padding: 1.5rem;
-  }
-
-  .project-title {
-    font-size: 1.2rem;
-  }
-
-  .project-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .project-link {
-    text-align: center;
-  }
-
-  .video-card {
-    /* margin-bottom: 0.5rem; */
-    height: 180px;
-  }
+.blog-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-/* Loading states */
+.blog-header h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.blog-meta {
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+}
+
+.blog-body {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.blog-body p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-body h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .loading {
   display: flex;
   justify-content: center;
@@ -357,14 +385,13 @@ footer {
   }
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -373,9 +400,77 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: #c1c1c1;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .landing-quote {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+    margin-top: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-text {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
+
+  .portfolio-title {
+    font-size: 1.6rem;
+  }
+
+  .footer-quote {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .social-bar {
+    bottom: 20px;
+    padding: 12px 20px;
+    gap: 5px;
+  }
+
+  .blog-btn {
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .blog-btn .material-symbols-outlined {
+    font-size: 24px;
+  }
+
+  .blog-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .blog-header h2 {
+    font-size: 2rem;
+  }
+
+  .blog-body {
+    font-size: 1.3rem;
+  }
+
+  .blog-body h3 {
+    font-size: 1.5rem;
+  }
 }
