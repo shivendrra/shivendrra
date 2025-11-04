@@ -4,31 +4,31 @@ import { Project, Video } from './types';
 export const sampleVideos: Video[] = [
   {
     title: 'I BUILT A GPT',
-    thumbnail: 'media/Thumbnail2.png',
+    thumbnail: './media/Thumbnail2.png',
     description: 'A video by Shivendra',
     url: 'https://www.youtube.com/watch?v=PVpyN_2z5II'
   },
   {
     title: 'THE ARTIST',
-    thumbnail: 'media/Thumbnail1.png',
+    thumbnail: './media/Thumbnail1.png',
     description: 'A Shortfilm by Shivendra',
     url: 'https://www.youtube.com/watch?v=OfyEUGiRzYw'
   },
   {
     title: 'ORIGIN OF ISRO',
-    thumbnail: 'media/Thumbnail4.png',
+    thumbnail: './media/Thumbnail4.png',
     description: 'A video by Vakya',
     url: 'https://www.youtube.com/watch?v=L-hUYR9KsIk&t=33s'
   },
   {
     title: 'THIS PICTURE TELLS A STORY',
-    thumbnail: 'media/Thumbnail3.png',
+    thumbnail: './media/Thumbnail3.png',
     description: 'A video by Vakya',
     url: 'https://www.youtube.com/watch?v=t5M_D5hAyoc&t=81s'
   },
   {
     title: 'OPERATION GANGOTRI',
-    thumbnail: 'media/Thumbnail5.png',
+    thumbnail: './media/Thumbnail5.png',
     description: 'A video by Vakya',
     url: 'https://www.youtube.com/watch?v=86kPclU1X8E&t=58s'
   }
