@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const socialLinks = [
-  { href: "https://youtube.com/@shivendrra_", icon: "./media/youtube.svg" },
-  { href: "https://twitter.com/shivendrra_", icon: "./media/twitter.svg" },
-  { href: "https://github.com/shivendrra", icon: "./media/github.svg" },
-  { href: "https://linkedin.com/in/shivendrra", icon: "./media/linkedin.svg" },
-  { href: "https://instagram.com/shivendrra_", icon: "./media/instagram.svg" },
-  { href: "https://dribbble.com/shivendrra_", icon: "./media/dribbble.svg" },
-  { href: "https://behance.net/shivendrra_", icon: "./media/behance.svg" },
+  { href: "https://youtube.com/@shivendrra_", icon: "https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/youtube.svg" },
+  { href: "https://twitter.com/shivendrra_", icon: "https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/twitter.svg" },
+  { href: "https://github.com/shivendrra", icon: "https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/github.svg" },
+  { href: "https://linkedin.com/in/shivendrra", icon: "https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/linkedin.svg" },
+  { href: "https://instagram.com/shivendrra_", icon: "https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/instagram.svg" },
+  { href: "https://dribbble.com/shivendrra_", icon: "https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/dribbble.svg" },
+  { href: "https://behance.net/shivendrra_", icon: "https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/behance.svg" },
 ];
 
 const SocialBar: React.FC = () => {

@@ -13,7 +13,7 @@ const Lander: React.FC = () => {
             <p className="text-2xl sm:text-3xl italic text-zinc-500">"man most likely to be anything"</p>
           </div>
           <div className="flex-shrink-0 mt-8 md:mt-0">
-            <img src="./media/profile.jpg" alt="Shivendra" className="w-40 h-40 sm:w-48 sm:h-48 object-cover shadow-lg" />
+            <img src="https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/profile.jpg" alt="Shivendra" className="w-40 h-40 sm:w-48 sm:h-48 object-cover shadow-lg" />
           </div>
         </div>
         <div className="text-center">
