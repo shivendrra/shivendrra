@@ -1,6 +1,20 @@
+
+
 import React, { useState, useEffect, useCallback } from 'react';
-// Fix: Use namespace import for firebase/firestore to resolve module errors.
-import * as firestore from 'firebase/firestore';
+// Fix: Use named imports for firebase/firestore to resolve module errors.
+import {
+  collection,
+  query,
+  getDocs,
+  doc,
+  updateDoc,
+  addDoc,
+  serverTimestamp,
+  Timestamp,
+  deleteDoc
+} from 'firebase/firestore';
+// Fix: Use namespace import for firebase/auth to resolve module errors.
+import * as fbAuth from 'firebase/auth';
 import { auth, db } from '../services/firebase';
 // Fix: Use namespace import for react-router-dom to resolve module errors.
 import * as ReactRouterDOM from 'react-router-dom';
@@ -16,16 +30,27 @@ const AdminBlogPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = ReactRouterDOM.useNavigate();
 
-  const blogsCollectionRef = firestore.collection(db, "blogs");
+  const blogsCollectionRef = collection(db, "blogs");
 
   const fetchBlogs = useCallback(async () => {
     setIsLoading(true);
-    const q = firestore.query(blogsCollectionRef, firestore.orderBy("date", "desc"));
-    const data = await firestore.getDocs(q);
-    const fetchedBlogs = data.docs.map(doc => ({ ...doc.data(), id: doc.id } as Blog));
+    const q = query(blogsCollectionRef);
+    const data = await getDocs(q);
+    let fetchedBlogs = data.docs.map(doc => ({ ...doc.data(), id: doc.id } as Blog));
+
+    fetchedBlogs = fetchedBlogs
+      .filter(blog => blog.date)
+      .sort((a, b) => {
+        const dateA = a.date instanceof Timestamp ? a.date.toMillis() : new Date(a.date as string).getTime();
+        const dateB = b.date instanceof Timestamp ? b.date.toMillis() : new Date(b.date as string).getTime();
+        if (isNaN(dateA)) return 1;
+        if (isNaN(dateB)) return -1;
+        return dateB - dateA;
+      });
+      
     setBlogs(fetchedBlogs);
     setIsLoading(false);
-  }, [blogsCollectionRef]);
+  }, []);
 
   useEffect(() => {
     fetchBlogs();
@@ -34,11 +59,11 @@ const AdminBlogPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (editingBlog) {
-      const blogDoc = firestore.doc(db, "blogs", editingBlog.id);
-      await firestore.updateDoc(blogDoc, { title, date, imageUrl, content });
+      const blogDoc = doc(db, "blogs", editingBlog.id);
+      await updateDoc(blogDoc, { title, date, imageUrl, content });
       setEditingBlog(null);
     } else {
-      await firestore.addDoc(blogsCollectionRef, { title, date, imageUrl, content, createdAt: firestore.serverTimestamp() });
+      await addDoc(blogsCollectionRef, { title, date, imageUrl, content, createdAt: serverTimestamp() });
     }
     setTitle('');
     setDate('');
@@ -54,7 +79,7 @@ const AdminBlogPage: React.FC = () => {
     let dateValue = '';
     if (blog.date) {
       // Handles both Firestore Timestamp and date strings
-      const dateObj = blog.date instanceof firestore.Timestamp ? blog.date.toDate() : new Date(blog.date as string);
+      const dateObj = blog.date instanceof Timestamp ? blog.date.toDate() : new Date(blog.date as string);
       if (!isNaN(dateObj.getTime())) {
         // Format to YYYY-MM-DD for the <input type="date">
         dateValue = dateObj.toISOString().split('T')[0];
@@ -69,14 +94,14 @@ const AdminBlogPage: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this blog post?")) {
-      const blogDoc = firestore.doc(db, "blogs", id);
-      await firestore.deleteDoc(blogDoc);
+      const blogDoc = doc(db, "blogs", id);
+      await deleteDoc(blogDoc);
       fetchBlogs();
     }
   };
 
   const handleSignOut = async () => {
-    await auth.signOut();
+    await fbAuth.signOut(auth);
     navigate('/admin/auth');
   };
 
@@ -121,7 +146,7 @@ const AdminBlogPage: React.FC = () => {
                     <p className="text-sm text-gray-500">
                       {(() => {
                         if (!blog.date) return 'Date not specified';
-                        const dateObj = blog.date instanceof firestore.Timestamp ? blog.date.toDate() : new Date(blog.date as string);
+                        const dateObj = blog.date instanceof Timestamp ? blog.date.toDate() : new Date(blog.date as string);
                         if (isNaN(dateObj.getTime())) return 'Invalid Date';
                         return dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
                       })()}

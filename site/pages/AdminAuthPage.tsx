@@ -1,7 +1,9 @@
 
+
 import React, { useState, useEffect } from 'react';
 // Fix: Use namespace imports for react-router-dom and firebase/auth to resolve module errors.
 import * as ReactRouterDOM from 'react-router-dom';
+// Fix: Use namespace import for firebase/auth to resolve module errors.
 import * as fbAuth from 'firebase/auth';
 import { auth, googleProvider } from '../services/firebase';
 import useAuth from '../hooks/useAuth';
@@ -25,7 +27,7 @@ const AdminAuthPage: React.FC = () => {
 
       if (credentialUser.email !== 'shivharsh44@gmail.com') {
         setError('Access denied. This account is not authorized.');
-        await auth.signOut();
+        await fbAuth.signOut(auth);
       } else {
         navigate('/admin/blog');
       }

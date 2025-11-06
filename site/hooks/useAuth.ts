@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect } from 'react';
 // Fix: Use namespace import for firebase/auth to resolve module errors.
 import * as fbAuth from 'firebase/auth';

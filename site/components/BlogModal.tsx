@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-// Fix: Use namespace import for firebase/firestore to resolve module errors.
-import * as firestore from 'firebase/firestore';
+// Fix: Use named import for firebase/firestore to resolve module errors.
+import { Timestamp } from 'firebase/firestore';
 import { Blog } from '../types';
 
 interface BlogModalProps {
@@ -24,7 +24,7 @@ const BlogModal: React.FC<BlogModalProps> = ({ blog, onClose }) => {
     };
   }, [onClose]);
 
-  const date = blog.date instanceof firestore.Timestamp ? blog.date.toDate() : new Date(blog.date as string);
+  const date = blog.date instanceof Timestamp ? blog.date.toDate() : new Date(blog.date as string);
   const formattedDate = !isNaN(date.getTime())
     ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
     : 'Date not available';

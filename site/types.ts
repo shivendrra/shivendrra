@@ -1,6 +1,7 @@
 
-// Fix: Use namespace import for firebase/firestore to resolve module errors.
-import * as firestore from 'firebase/firestore';
+
+// Fix: Use named import for firebase/firestore to resolve module errors.
+import { Timestamp } from 'firebase/firestore';
 
 export interface Video {
   title: string;
@@ -20,7 +21,7 @@ export interface Project {
 export interface Blog {
   id: string;
   title: string;
-  date: string | firestore.Timestamp;
+  date: string | Timestamp;
   imageUrl: string;
   content: string;
 }

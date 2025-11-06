@@ -1,7 +1,9 @@
 
-// Fix: Use namespace imports for firebase modules to resolve module errors.
+
+// Fix: Use named imports for firebase modules to resolve module errors.
 import * as app from "firebase/app";
-import * as firestore from "firebase/firestore";
+import { getFirestore, serverTimestamp } from "firebase/firestore";
+// Fix: Use namespace import for firebase/auth to resolve module errors.
 import * as fbAuth from "firebase/auth";
 
 const firebaseConfig = {
@@ -15,7 +17,7 @@ const firebaseConfig = {
 
 const firebaseApp = app.initializeApp(firebaseConfig);
 
-export const db = firestore.getFirestore(firebaseApp);
+export const db = getFirestore(firebaseApp);
 export const auth = fbAuth.getAuth(firebaseApp);
 export const googleProvider = new fbAuth.GoogleAuthProvider();
-export const serverTimestamp = firestore.serverTimestamp;
+export { serverTimestamp };
