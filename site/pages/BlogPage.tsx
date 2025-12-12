@@ -20,7 +20,7 @@ const BlogPage: React.FC = () => {
         setLoading(false);
         return;
       }
-      
+
       setLoading(true);
       setError(null);
       try {
@@ -59,9 +59,9 @@ const BlogPage: React.FC = () => {
       </div>
     );
   }
-  
+
   if (!blog) {
-      return null;
+    return null;
   }
 
   const date = blog.date instanceof Timestamp ? blog.date.toDate() : new Date(blog.date as string);
@@ -73,24 +73,35 @@ const BlogPage: React.FC = () => {
     <>
       <main className="min-h-screen py-20 px-6 md:px-8">
         <div className="max-w-4xl mx-auto">
-            <div className="mb-12">
-                <ReactRouterDOM.Link to="/" className="text-zinc-500 hover:text-primary transition-colors flex items-center gap-2 text-lg">
-                    <span className="material-symbols-outlined">arrow_back</span>
-                    Back to Home
-                </ReactRouterDOM.Link>
+          <div className="mb-12">
+            <ReactRouterDOM.Link to="/" className="text-zinc-500 hover:text-primary transition-colors flex items-center gap-2 text-lg">
+              <span className="material-symbols-outlined">arrow_back</span>
+              Back to Home
+            </ReactRouterDOM.Link>
+          </div>
+
+          <article className="bg-white w-full">
+            <div className="pb-6 mb-8 border-b border-gray-200">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal italic text-zinc-800 mb-3">{blog.title}</h1>
+              <p className="text-lg italic text-zinc-500">{formattedDate}</p>
             </div>
 
-            <article className="bg-white w-full">
-                <div className="pb-6 mb-8 border-b border-gray-200">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal italic text-zinc-800 mb-3">{blog.title}</h1>
-                  <p className="text-lg italic text-zinc-500">{formattedDate}</p>
-                </div>
-                <div 
-                  className="prose prose-lg max-w-none text-xl text-zinc-600 leading-relaxed space-y-6 font-instrument-sans"
-                  dangerouslySetInnerHTML={{ __html: blog.content }}
-                >
-                </div>
-            </article>
+            {blog.imageUrl && (
+              <div className="mb-10">
+                <img
+                  src={blog.imageUrl}
+                  alt={blog.title}
+                  className="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-md"
+                />
+              </div>
+            )}
+
+            <div
+              className="prose prose-lg max-w-none text-xl text-zinc-600 leading-relaxed space-y-6 font-instrument-sans"
+              dangerouslySetInnerHTML={{ __html: blog.content }}
+            >
+            </div>
+          </article>
         </div>
       </main>
       <Footer />

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 // Fix: Use named imports for firebase/firestore to resolve module errors.
 import { collection, query, getDocs, Timestamp } from 'firebase/firestore';
@@ -16,11 +17,11 @@ const Blogs: React.FC = () => {
         const blogsCollectionRef = collection(db, "blogs");
         const q = query(blogsCollectionRef);
         const data = await getDocs(q);
-        
+
         let fetchedBlogs = data.docs.map(doc => ({ ...doc.data(), id: doc.id } as Blog));
-        
+
         fetchedBlogs = fetchedBlogs
-          .filter(blog => blog.date) 
+          .filter(blog => blog.date)
           .sort((a, b) => {
             const dateA = a.date instanceof Timestamp ? a.date.toMillis() : new Date(a.date as string).getTime();
             const dateB = b.date instanceof Timestamp ? b.date.toMillis() : new Date(b.date as string).getTime();
@@ -28,7 +29,7 @@ const Blogs: React.FC = () => {
             if (isNaN(dateB)) return -1;
             return dateB - dateA;
           });
-          
+
         setBlogs(fetchedBlogs);
       } catch (error) {
         console.error("Error fetching blogs: ", error);
@@ -48,20 +49,22 @@ const Blogs: React.FC = () => {
   }
 
   return (
-    <div className="border-t border-zinc-200">
+    <div className="border-b border-zinc-200">
       {blogs.length > 0 ? (
         blogs.map(blog => {
           const date = blog.date instanceof Timestamp ? blog.date.toDate() : new Date(blog.date as string);
           const formattedDate = !isNaN(date.getTime())
-            ? date.toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' })
-            : '';
+            ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+            : 'Date not available';
 
           return (
-            <ReactRouterDOM.Link to={`/blog/${blog.id}`} key={blog.id} className="block border-b border-zinc-200 group transition-colors duration-300 hover:bg-zinc-50">
-              <div className="flex justify-between items-center flex-wrap gap-4 py-6">
-                <h3 className="text-2xl md:text-3xl font-normal text-zinc-800 group-hover:text-primary transition-colors duration-300">{blog.title}</h3>
-                <p className="text-md text-zinc-500 font-mono flex-shrink-0">{formattedDate}</p>
-              </div>
+            <ReactRouterDOM.Link
+              to={`/blog/${blog.id}`}
+              key={blog.id}
+              className="block border-t border-zinc-200 group transition-colors duration-300 hover:bg-zinc-50/75 p-8"
+            >
+              <h3 className="text-3xl font-normal text-zinc-800 group-hover:text-primary transition-colors duration-300 mb-3">{blog.title}</h3>
+              <p className="text-lg text-zinc-500 font-instrument-sans">{formattedDate}</p>
             </ReactRouterDOM.Link>
           );
         })
