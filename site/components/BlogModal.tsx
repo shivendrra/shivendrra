@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+// Fix: Use named import for firebase/firestore to resolve module errors.
 import { Timestamp } from 'firebase/firestore';
 import { Blog } from '../types';
 

@@ -1,15 +1,15 @@
 
-
 import React, { useState, useEffect } from 'react';
-// Fix: Use namespace imports for react-router-dom and firebase/auth to resolve module errors.
-import * as ReactRouterDOM from 'react-router-dom';
+// Fix: Use named imports for react-router-dom to resolve module errors.
+import { useNavigate } from 'react-router-dom';
 // Fix: Use namespace import for firebase/auth to resolve module errors.
 import * as fbAuth from 'firebase/auth';
 import { auth, googleProvider } from '../services/firebase';
 import useAuth from '../hooks/useAuth';
 
 const AdminAuthPage: React.FC = () => {
-  const navigate = ReactRouterDOM.useNavigate();
+  // Fix: Use useNavigate hook directly.
+  const navigate = useNavigate();
   const { user, loading } = useAuth();
   const [error, setError] = useState<string | null>(null);
 

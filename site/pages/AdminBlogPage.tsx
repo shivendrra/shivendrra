@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect, useCallback } from 'react';
 // Fix: Use named imports for firebase/firestore to resolve module errors.
 import {
@@ -16,8 +15,8 @@ import {
 // Fix: Use namespace import for firebase/auth to resolve module errors.
 import * as fbAuth from 'firebase/auth';
 import { auth, db } from '../services/firebase';
-// Fix: Use namespace import for react-router-dom to resolve module errors.
-import * as ReactRouterDOM from 'react-router-dom';
+// Fix: Use named import for react-router-dom to resolve module errors.
+import { useNavigate } from 'react-router-dom';
 import { Blog } from '../types';
 
 const AdminBlogPage: React.FC = () => {
@@ -28,7 +27,8 @@ const AdminBlogPage: React.FC = () => {
   const [content, setContent] = useState('');
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = ReactRouterDOM.useNavigate();
+  // Fix: Use useNavigate hook directly.
+  const navigate = useNavigate();
 
   const blogsCollectionRef = collection(db, "blogs");
 

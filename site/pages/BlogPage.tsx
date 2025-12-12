@@ -1,13 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import * as ReactRouterDOM from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { doc, getDoc, Timestamp } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { Blog } from '../types';
 import Footer from '../components/Footer';
 
 const BlogPage: React.FC = () => {
-  const { blogId } = ReactRouterDOM.useParams<{ blogId: string }>();
+  const { blogId } = useParams<{ blogId: string }>();
   const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -53,9 +53,9 @@ const BlogPage: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-2xl text-red-500 mb-4">{error}</h1>
-        <ReactRouterDOM.Link to="/" className="text-primary hover:underline">
+        <Link to="/" className="text-primary hover:underline">
           Go back to Home
-        </ReactRouterDOM.Link>
+        </Link>
       </div>
     );
   }
@@ -71,37 +71,43 @@ const BlogPage: React.FC = () => {
 
   return (
     <>
-      <main className="min-h-screen py-20 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-12">
-            <ReactRouterDOM.Link to="/" className="text-zinc-500 hover:text-primary transition-colors flex items-center gap-2 text-lg">
-              <span className="material-symbols-outlined">arrow_back</span>
-              Back to Home
-            </ReactRouterDOM.Link>
-          </div>
-
-          <article className="bg-white w-full">
-            <div className="pb-6 mb-8 border-b border-gray-200">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal italic text-zinc-800 mb-3">{blog.title}</h1>
-              <p className="text-lg italic text-zinc-500">{formattedDate}</p>
-            </div>
-
-            {blog.imageUrl && (
-              <div className="mb-10">
-                <img
-                  src={blog.imageUrl}
-                  alt={blog.title}
-                  className="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-md"
-                />
+      <header className="py-10 px-6 md:px-8">
+        <div className="max-w-3xl mx-auto flex justify-between items-center">
+          <Link to="/" className="text-3xl font-google-sans">
+            व्याकुल
+          </Link>
+          <Link to="/blog" className="text-zinc-500 hover:text-primary transition-colors flex items-center gap-2 text-lg">
+            All Posts
+          </Link>
+        </div>
+      </header>
+      <main className="min-h-screen px-6 md:px-8">
+        <div className="max-w-3xl mx-auto">
+          <div className="pb-16">
+            <article className="bg-white w-full">
+              <div className="mb-8 text-center">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-zinc-800 mb-3">{blog.title}</h1>
+                <p className="text-lg text-zinc-500">{formattedDate}</p>
               </div>
-            )}
 
-            <div
-              className="prose prose-lg max-w-none text-xl text-zinc-600 leading-relaxed space-y-6 font-instrument-sans"
-              dangerouslySetInnerHTML={{ __html: blog.content }}
-            >
-            </div>
-          </article>
+              {blog.imageUrl && (
+                <div className="mb-10">
+                  <img
+                    src={blog.imageUrl}
+                    alt={blog.title}
+                    className="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-md"
+                  />
+                </div>
+              )}
+
+              <div
+                className="prose prose-xl max-w-none prose-headings:font-instrument-serif prose-headings:text-zinc-900 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-hr:my-12 font-instrument-sans text-zinc-700 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              >
+              </div>
+            </article>
+          </div>
+          <hr className="border-zinc-200" />
         </div>
       </main>
       <Footer />

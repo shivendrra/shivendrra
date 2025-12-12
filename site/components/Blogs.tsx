@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 // Fix: Use named imports for firebase/firestore to resolve module errors.
 import { collection, query, getDocs, Timestamp } from 'firebase/firestore';
-// Fix: Use namespace import for react-router-dom to resolve module errors.
-import * as ReactRouterDOM from 'react-router-dom';
+// Fix: Use named import for react-router-dom to resolve module errors.
+import { Link } from 'react-router-dom';
 import { db } from '../services/firebase';
 import { Blog } from '../types';
 
@@ -58,14 +58,15 @@ const Blogs: React.FC = () => {
             : 'Date not available';
 
           return (
-            <ReactRouterDOM.Link
+            // Fix: Use Link component directly.
+            <Link
               to={`/blog/${blog.id}`}
               key={blog.id}
               className="block border-t border-zinc-200 group transition-colors duration-300 hover:bg-zinc-50/75 p-8"
             >
               <h3 className="text-3xl font-normal text-zinc-800 group-hover:text-primary transition-colors duration-300 mb-3">{blog.title}</h3>
               <p className="text-lg text-zinc-500 font-instrument-sans">{formattedDate}</p>
-            </ReactRouterDOM.Link>
+            </Link>
           );
         })
       ) : (

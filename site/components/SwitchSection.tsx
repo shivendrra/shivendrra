@@ -1,9 +1,11 @@
+
 import React, { useState } from 'react';
+// Fix: Use named import for react-router-dom to resolve module errors.
+import { Link } from 'react-router-dom';
 import Videos from './Videos';
 import Projects from './Projects';
-import Blogs from './Blogs';
 
-type ActiveView = 'videos' | 'projects' | 'blogs';
+type ActiveView = 'videos' | 'projects';
 
 const SwitchSection: React.FC = () => {
   const [activeView, setActiveView] = useState<ActiveView>('videos');
@@ -13,6 +15,8 @@ const SwitchSection: React.FC = () => {
       activeView === view ? 'text-primary border-b-2 border-primary' : 'text-zinc-500 hover:text-zinc-800'
     }`;
   };
+
+  const linkClass = "text-xl md:text-2xl font-normal italic px-4 py-2 text-zinc-500 hover:text-zinc-800 transition-colors duration-300";
 
   return (
     <section className="py-20 px-6 md:px-8">
@@ -24,15 +28,15 @@ const SwitchSection: React.FC = () => {
           <button onClick={() => setActiveView('projects')} className={getButtonClass('projects')}>
             cool projects
           </button>
-          <button onClick={() => setActiveView('blogs')} className={getButtonClass('blogs')}>
+          {/* Fix: Use Link component directly. */}
+          <Link to="/blog" className={linkClass}>
             cool blogs
-          </button>
+          </Link>
         </div>
 
         <div>
           {activeView === 'videos' && <Videos />}
           {activeView === 'projects' && <Projects />}
-          {activeView === 'blogs' && <Blogs />}
         </div>
       </div>
     </section>
