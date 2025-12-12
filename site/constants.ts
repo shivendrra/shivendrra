@@ -36,6 +36,20 @@ export const sampleVideos: Video[] = [
 
 export const fallbackProjects: Project[] = [
   {
+    name: "AxGrad",
+    description: "lightweight tensor library that contains it's own auto-diff engine like pytorch",
+    html_url: "https://github.com/shivendrra/ax-grad",
+    homepage: "https://pypi.org/project/axgrad/",
+    languages: [{ name: "C++", percentage: 54.1 }, { name: "Python", percentage: 25.8 }, { name: "Cuda", percentage: 13.4 }, { name: "C", percentage: 6.4 }],
+  },
+  {
+    name: "Axon",
+    description: "Lightweight tensor library for deep learning model low-latency inference",
+    html_url: "https://github.com/delveopers/Axon",
+    homepage: "https://pypi.org/project/axon-pypi/",
+    languages: [{ name: "C++", percentage: 51.1 }, { name: "Python", percentage: 23.7 }, { name: "Cuda", percentage: 17 }, { name: "C", percentage: 8 }],
+  },
+  {
     name: "Shredword",
     description: "Fast & efficient BPE tokenizer written in C & python for LLM tranining",
     html_url: "https://github.com/delveopers/Shredword",
@@ -50,17 +64,31 @@ export const fallbackProjects: Project[] = [
     languages: [{ name: "Javascript", percentage: 70.5 }, { name: "CSS", percentage: 27.4 }, { name: "HTML", percentage: 2.1 }],
   },
   {
-    name: "AxGrad",
-    description: "lightweight tensor library that contains it's own auto-diff engine like pytorch",
-    html_url: "https://github.com/shivendrra/ax-grad",
-    homepage: "https://pypi.org/project/axgrad/",
-    languages: [{ name: "C++", percentage: 54.1 }, { name: "Python", percentage: 25.8 }, { name: "Cuda", percentage: 13.4 }, { name: "C", percentage: 6.4 }],
+    name: "Acapella",
+    description: "Letterboxd, for music. A social diary for Music Lovers",
+    html_url: "https://github.com/shivendrra/acapella",
+    homepage: "https://theacapella.vercel.app/",
+    languages: [{ name: "Typescript", percentage: 88.4 }, { name: "Python", percentage: 11.0 }, { name: "HTML", percentage: 0.6 }],
   },
   {
-    name: "Axon",
-    description: "lightweight multi-dimensional array manipulation library powered by GPU",
-    html_url: "https://github.com/delveopers/Axon",
-    homepage: "https://pypi.org/project/axon-pypi/",
-    languages: [{ name: "C++", percentage: 51.1 }, { name: "Python", percentage: 23.7 }, { name: "Cuda", percentage: 17 }, { name: "C", percentage: 8 }],
-  }
+    name: "Enigma",
+    description: "A dna sequence generation/classification using transformers",
+    html_url: "https://github.com/shivendrra/enigma",
+    homepage: "https://huggingface.co/shivendrra/enigma1",
+    languages: [{ name: "Jupyter Notebook", percentage: 51.9 }, { name: "Python", percentage: 48.1 }],
+  },
+  {
+    name: "Shredword-Trainer",
+    description: "BPE & Unigram Vocab Training library",
+    html_url: "https://github.com/shivendrra/shredword-trainer",
+    homepage: "https://pypi.org/project/shredword-trainer/",
+    languages: [{ name: "C++", percentage: 64.8 }, { name: "Python", percentage: 18.5 }, { name: "C", percentage: 15.8 }, { name: "CMake", percentage: 0.9 }],
+  },
+  {
+    name: "Biosaic",
+    description: "KMer level tokenizer for DNA & Proteins sequences",
+    html_url: "https://github.com/delveopers/Biosaic/",
+    homepage: "https://pypi.org/project/biosaic/",
+    languages: [{ name: "Python", percentage: 100 }],
+  },
 ];

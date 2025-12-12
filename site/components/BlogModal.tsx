@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 // Fix: Use named import for firebase/firestore to resolve module errors.
 import { Timestamp } from 'firebase/firestore';
@@ -49,7 +50,7 @@ const BlogModal: React.FC<BlogModalProps> = ({ blog, onClose }) => {
           <p className="text-lg italic text-zinc-500">{formattedDate}</p>
         </div>
         <div 
-          className="prose prose-lg max-w-none text-xl text-zinc-600 leading-relaxed space-y-6"
+          className="prose prose-lg max-w-none text-xl text-zinc-600 leading-relaxed space-y-6 font-instrument-sans"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         >
         </div>
