@@ -1,10 +1,10 @@
 import React from 'react';
-// Fix: Use namespace import for react-router-dom to resolve module errors.
 import * as ReactRouterDOM from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AdminAuthPage from './pages/AdminAuthPage';
 import AdminBlogPage from './pages/AdminBlogPage';
 import useAuth from './hooks/useAuth';
+import BlogPage from './pages/BlogPage';
 
 const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, loading } = useAuth();
@@ -12,7 +12,7 @@ const PrivateRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center bg-white text-zinc-800">Loading...</div>;
   }
-  
+
   if (user && user.email === 'shivharsh44@gmail.com') {
     return <>{children}</>;
   }
@@ -26,15 +26,15 @@ const App: React.FC = () => {
       <ReactRouterDOM.HashRouter>
         <ReactRouterDOM.Routes>
           <ReactRouterDOM.Route path="/" element={<HomePage />} />
-          <ReactRouterDOM.Route path="/blog/:blogId" element={<HomePage />} />
+          <ReactRouterDOM.Route path="/blog/:blogId" element={<BlogPage />} />
           <ReactRouterDOM.Route path="/admin/auth" element={<AdminAuthPage />} />
-          <ReactRouterDOM.Route 
-            path="/admin/blog" 
+          <ReactRouterDOM.Route
+            path="/admin/blog"
             element={
               <PrivateRoute>
                 <AdminBlogPage />
               </PrivateRoute>
-            } 
+            }
           />
         </ReactRouterDOM.Routes>
       </ReactRouterDOM.HashRouter>
