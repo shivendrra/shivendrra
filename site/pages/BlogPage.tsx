@@ -91,11 +91,12 @@ const BlogPage: React.FC = () => {
               </div>
 
               {blog.imageUrl && (
-                <div className="mb-10">
+                <div className="mb-10 w-full mx-auto rounded-lg shadow-md overflow-hidden
+                aspect-[3/4] md:aspect-video">
                   <img
                     src={blog.imageUrl}
                     alt={blog.title}
-                    className="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-md"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               )}
