@@ -47,7 +47,7 @@ export const fallbackProjects: Project[] = [
     description: "a music app that lets you stream music or any video available on youtube for free without ads",
     html_url: "https://github.com/shivendrra/synapse",
     homepage: "https://synapse-music.vercel.app/",
-    languages: [{ name: "Javascript", percentage: 70.5 }, { name: "CSS", percentage: 27.4 }, { name: "HTML", percentage: 2.1 }],
+    languages: [{ name: "TypeScript", percentage: 96.9 }, { name: "HTML", percentage: 3.1 }],
   },
   {
     name: "AxGrad",
@@ -61,6 +61,34 @@ export const fallbackProjects: Project[] = [
     description: "lightweight multi-dimensional array manipulation library powered by GPU",
     html_url: "https://github.com/delveopers/Axon",
     homepage: "https://pypi.org/project/axon-pypi/",
-    languages: [{ name: "C++", percentage: 51.1 }, { name: "Python", percentage: 23.7 }, { name: "Cuda", percentage: 17 }, { name: "C", percentage: 8 }],
+    languages: [{ name: "Python", percentage: 100 }],
+  },
+  {
+    name: "Acapella",
+    description: "Letterboxd, but for Music",
+    html_url: "https://github.com/shivendrra/acapella",
+    homepage: "https://theacapella.vercel.app/",
+    languages: [{ name: "TypeScript", percentage: 84.9 }, { name: "Python", percentage: 14.5 }, { name: "HTML", percentage: 0.6 }],
+  },
+  {
+    name: "Cattlesense",
+    description: "Centralized portal for livestock management for MRL & AMU Compliance",
+    html_url: "https://github.com/shivendrra/CattleSense",
+    homepage: "https://cattlesense.vercel.app/",
+    languages: [{ name: "TypeScript", percentage: 51.0 }, { name: "Python", percentage: 46.7 }, { name: "HTML", percentage: 2.3 }],
+  },
+  {
+    name: "Biosaic",
+    description: "KMer level tokenizer for DNA & Proteins sequences",
+    html_url: "https://github.com/delveopers/Biosaic",
+    homepage: "https://pypi.org/project/biosaic/",
+    languages: [{ name: "C++", percentage: 54.3 }, { name: "Python", percentage: 31.1 }, { name: "C", percentage: 12.1 }],
+  },
+  {
+    name: "Shredword-Trainer",
+    description: "BPE & Unigram Vocab Training library",
+    html_url: "https://github.com/shivendrra/shredword-trainer",
+    homepage: "https://pypi.org/project/shredword-trainer/",
+    languages: [{ name: "C++", percentage: 62.5 }, { name: "Python", percentage: 21.9 }, { name: "C", percentage: 14.5 }],
   }
 ];
