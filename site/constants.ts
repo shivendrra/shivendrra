@@ -3,10 +3,10 @@ import { Project, Video } from './types';
 
 export const sampleVideos: Video[] = [
   {
-    title: 'I BUILT A GPT',
+    title: 'A message',
     thumbnail: 'https://raw.githubusercontent.com/shivendrra/shivendrra/main/website/media/Thumbnail2.png',
     description: 'A video by Shivendra',
-    url: 'https://www.youtube.com/watch?v=PVpyN_2z5II'
+    url: 'https://www.youtube.com/watch?v=WuULaBwaClc'
   },
   {
     title: 'THE ARTIST',
