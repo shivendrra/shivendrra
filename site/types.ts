@@ -1,5 +1,4 @@
 
-
 // Fix: Use named import for firebase/firestore to resolve module errors.
 import { Timestamp } from 'firebase/firestore';
 
@@ -24,4 +23,5 @@ export interface Blog {
   date: string | Timestamp;
   imageUrl: string;
   content: string;
+  category?: string;
 }

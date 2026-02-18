@@ -87,22 +87,29 @@ const BlogPage: React.FC = () => {
             <article className="bg-white w-full">
               <div className="mb-8 text-center">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-zinc-800 mb-3">{blog.title}</h1>
-                <p className="text-lg text-zinc-500">{formattedDate}</p>
+                <div className="flex justify-center items-center gap-2 text-lg text-zinc-500">
+                  <p>{formattedDate}</p>
+                  {blog.category && (
+                    <>
+                      <span>•</span>
+                      <span className="text-primary font-medium">{blog.category}</span>
+                    </>
+                  )}
+                </div>
               </div>
 
               {blog.imageUrl && (
-                <div className="mb-10 w-full mx-auto rounded-lg shadow-md overflow-hidden
-                aspect-[3/4] md:aspect-video">
+                <div className="mb-10">
                   <img
                     src={blog.imageUrl}
                     alt={blog.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-md"
                   />
                 </div>
               )}
 
               <div
-                className="prose prose-xl max-w-none prose-headings:font-instrument-serif prose-headings:text-zinc-900 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-hr:my-12 font-instrument-sans text-zinc-700 leading-relaxed"
+                className="prose prose-lg max-w-none prose-headings:font-instrument-serif prose-headings:text-zinc-900 prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-hr:my-12 font-instrument-sans text-zinc-700 leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: blog.content }}
               >
               </div>

@@ -1,21 +1,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-// Fix: Use named imports for firebase/firestore to resolve module errors.
-import {
-  collection,
-  query,
-  getDocs,
-  doc,
-  updateDoc,
-  addDoc,
-  serverTimestamp,
-  Timestamp,
-  deleteDoc
-} from 'firebase/firestore';
-// Fix: Use namespace import for firebase/auth to resolve module errors.
+import {collection, query, getDocs, doc, updateDoc, addDoc, serverTimestamp, Timestamp, deleteDoc} from 'firebase/firestore';
 import * as fbAuth from 'firebase/auth';
 import { auth, db } from '../services/firebase';
-// Fix: Use named import for react-router-dom to resolve module errors.
 import { useNavigate } from 'react-router-dom';
 import { Blog } from '../types';
 
@@ -25,11 +12,10 @@ const AdminBlogPage: React.FC = () => {
   const [date, setDate] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [content, setContent] = useState('');
+  const [category, setCategory] = useState('');
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  // Fix: Use useNavigate hook directly.
   const navigate = useNavigate();
-
   const blogsCollectionRef = collection(db, "blogs");
 
   const fetchBlogs = useCallback(async () => {
@@ -47,7 +33,7 @@ const AdminBlogPage: React.FC = () => {
         if (isNaN(dateB)) return -1;
         return dateB - dateA;
       });
-      
+
     setBlogs(fetchedBlogs);
     setIsLoading(false);
   }, []);
@@ -60,22 +46,23 @@ const AdminBlogPage: React.FC = () => {
     e.preventDefault();
     if (editingBlog) {
       const blogDoc = doc(db, "blogs", editingBlog.id);
-      await updateDoc(blogDoc, { title, date, imageUrl, content });
+      await updateDoc(blogDoc, { title, date, imageUrl, content, category });
       setEditingBlog(null);
     } else {
-      await addDoc(blogsCollectionRef, { title, date, imageUrl, content, createdAt: serverTimestamp() });
+      await addDoc(blogsCollectionRef, { title, date, imageUrl, content, category, createdAt: serverTimestamp() });
     }
     setTitle('');
     setDate('');
     setImageUrl('');
     setContent('');
+    setCategory('');
     fetchBlogs();
   };
 
   const handleEdit = (blog: Blog) => {
     setEditingBlog(blog);
     setTitle(blog.title);
-    
+
     let dateValue = '';
     if (blog.date) {
       // Handles both Firestore Timestamp and date strings
@@ -89,6 +76,7 @@ const AdminBlogPage: React.FC = () => {
 
     setImageUrl(blog.imageUrl);
     setContent(blog.content);
+    setCategory(blog.category || '');
     window.scrollTo(0, 0);
   };
 
@@ -111,6 +99,7 @@ const AdminBlogPage: React.FC = () => {
     setDate('');
     setImageUrl('');
     setContent('');
+    setCategory('');
   }
 
   return (
@@ -125,7 +114,10 @@ const AdminBlogPage: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-4 text-zinc-700">{editingBlog ? 'Edit Blog' : 'Upload New Blog'}</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input type="text" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} required className="w-full p-2 border border-gray-300 rounded" />
-            <input type="date" placeholder="Date" value={date} onChange={e => setDate(e.target.value)} required className="w-full p-2 border border-gray-300 rounded" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <input type="date" placeholder="Date" value={date} onChange={e => setDate(e.target.value)} required className="w-full p-2 border border-gray-300 rounded" />
+              <input type="text" placeholder="Category (e.g. Technology, Personal)" value={category} onChange={e => setCategory(e.target.value)} className="w-full p-2 border border-gray-300 rounded" />
+            </div>
             <input type="text" placeholder="Image URL" value={imageUrl} onChange={e => setImageUrl(e.target.value)} required className="w-full p-2 border border-gray-300 rounded" />
             <textarea placeholder="Content (HTML)" value={content} onChange={e => setContent(e.target.value)} required rows={10} className="w-full p-2 border border-gray-300 rounded font-mono"></textarea>
             <div className="flex gap-4">
@@ -143,7 +135,7 @@ const AdminBlogPage: React.FC = () => {
                 <li key={blog.id} className="p-4 border rounded-md flex justify-between items-center flex-wrap gap-4">
                   <div>
                     <h3 className="font-bold text-lg">{blog.title}</h3>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-500 mb-1">
                       {(() => {
                         if (!blog.date) return 'Date not specified';
                         const dateObj = blog.date instanceof Timestamp ? blog.date.toDate() : new Date(blog.date as string);
@@ -151,6 +143,11 @@ const AdminBlogPage: React.FC = () => {
                         return dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
                       })()}
                     </p>
+                    {blog.category && (
+                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">
+                        {blog.category}
+                      </span>
+                    )}
                   </div>
                   <div className="flex gap-2">
                     <button onClick={() => handleEdit(blog)} className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-3 rounded text-sm transition duration-300">Edit</button>
