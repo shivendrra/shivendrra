@@ -129,7 +129,7 @@ const BlogListPage: React.FC = () => {
               </div>
             )}
           </div>
-          <hr className="border-zinc-200" />
+          {/* <hr className="border-zinc-200" /> */}
         </div>
       </main>
       <Footer />
