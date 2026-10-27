@@ -46,7 +46,7 @@ export const fallbackProjects: Project[] = [
     name: "Synapse",
     description: "a music app that lets you stream music or any video available on youtube for free without ads",
     html_url: "https://github.com/shivendrra/synapse",
-    homepage: "https://synapse-music.vercel.app/",
+    homepage: "",
     languages: [{ name: "TypeScript", percentage: 96.9 }, { name: "HTML", percentage: 3.1 }],
   },
   {
@@ -67,7 +67,7 @@ export const fallbackProjects: Project[] = [
     name: "Acapella",
     description: "Letterboxd, but for Music",
     html_url: "https://github.com/shivendrra/acapella",
-    homepage: "https://theacapella.vercel.app/",
+    homepage: "",
     languages: [{ name: "TypeScript", percentage: 84.9 }, { name: "Python", percentage: 14.5 }, { name: "HTML", percentage: 0.6 }],
   },
   {
@@ -90,5 +90,13 @@ export const fallbackProjects: Project[] = [
     html_url: "https://github.com/shivendrra/shredword-trainer",
     homepage: "https://pypi.org/project/shredword-trainer/",
     languages: [{ name: "C++", percentage: 62.5 }, { name: "Python", percentage: 21.9 }, { name: "C", percentage: 14.5 }],
-  }
+  },
+  {
+    name: "Percival",
+    description: "Multimodal Visual Intelligence and Spatiotemporal Tracking System",
+    html_url: "https://github.com/delveopers/Percival",
+    homepage: "https://github.com/delveopers/Percival/blob/main/README.md",
+    languages: [{ name: "Python", percentage: 98.6 }, { name: "Powershell", percentage: 1.4 }],
+  },
+
 ];
